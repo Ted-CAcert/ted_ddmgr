@@ -1,0 +1,34 @@
+extends layout
+
+block content
+  if Number(Data.NodeTreeID) > 0
+    div.parentlist 
+      a(href=0) Root
+      if Parent.More > 0
+        a(href=Number(Parent.More)) &nbsp;...
+      if Parent.ID5 > 0
+        a(href=Number(Parent.ID5))  #{Parent.Name5}
+      if Parent.ID4 > 0
+        a(href=Number(Parent.ID4))  #{Parent.Name4}
+      if Parent.ID3 > 0
+        a(href=Number(Parent.ID3))  #{Parent.Name3}
+      if Parent.ID2 > 0
+        a(href=Number(Parent.ID2))  #{Parent.Name2}
+      if Number(Parent.ID1) > 0
+        a(href=Number(Parent.ID1))  #{Parent.Name1}
+
+  h1= NodeName
+
+  form(method='POST')
+    div.form-group
+      label(for='child_name') Child node name:
+      input#child_name.form-control(type='text', placeholder='Name of child node' name='child_name' required)
+    button.btn.btn-primary(type='submit') Submit
+
+  h2 Children
+  if ChildList.length
+    ul
+      each Child in ChildList
+        if Child.NodeTreeID
+          li 
+            a(href=Number(Child.NodeTreeID)) #{Child.NodeName}
