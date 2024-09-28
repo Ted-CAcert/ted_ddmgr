@@ -1,3 +1,7 @@
+/* This script creates an empty database.
+  If you want to upgrade a database from an older version have a look at create_db_inc.sql
+*/ 
+
 CREATE OR REPLACE DATABASE ddmgr
   CHARACTER SET = 'utf8';
 USE ddmgr;
@@ -107,3 +111,9 @@ $$
 DELIMITER ;
 
 GRANT EXECUTE ON FUNCTION FCT_CheckPassword TO api@localhost;
+
+
+-- Current Version, should always be the last line of the script
+INSERT INTO DBVersion(VersionNum, VersionTS)
+  SELECT 0, NOW() WHERE NOT EXISTS(SELECT 1 FROM DBVersion WHERE VersionNum=0);
+  
