@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  h1= title
+  p
+    a(href="campaign/create") Create new campaign
+  if campaign_list.length
+    ul
+      each campaign in campaign_list
+        li
+          a(href="test") #{campaign.CampaignName}
+          |  (#{campaign.CampaignID})
+
+  else
+    p There are no campaigns.

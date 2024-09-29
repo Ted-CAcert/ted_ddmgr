@@ -1,0 +1,36 @@
+extends layout
+
+block content
+  h1= title
+
+  form(method='POST')
+    div.form-group
+      label(for='title') Title:
+      input#title.form-control(type='text', placeholder='Name of campaign' name='title' required value=(undefined===campaign ? '' : campaign.CampaignName) )
+    div.form-group
+      label(for='calendar') Calendar:
+      select#calendar.form-control(name='calendar')
+        option(value='') --Please select a calendar--
+        for calendar in calendars
+          if campaign
+            if calendar.CalendarID.toString()===campaign.CalendarID.toString()
+              option(value=calendar.CalendarID.toString() selected) #{calendar.CalendarName}
+            else
+              option(value=calendar.CalendarID.toString()) #{calendar.CalendarName}
+          else
+            option(value=calendar.CalendarID.toString()) #{calendar.CalendarName}
+    div.form-group
+      label(for='epoch_year') Starting Year:
+      input#epoch_year.form-control(type='number', placeholder='In-game year of campaign start' name='epoch_year' required value=(undefined===campaign ? '' : campaign.EpochYear) )
+    div.form-group
+      label(for='epoch_doy') Starting Day in Year:
+      input#epoch_doy.form-control(type='number', placeholder='Day of Year of campaign start' name='epoch_doy' required value=(undefined===campaign ? '0' : campaign.EpochDOY) )
+    div.form-group
+      label(for='rounds') Passed rounds since start:
+      input#rounds.form-control(type='number', placeholder='Number of passed rounds' name='rounds' value=(undefined===campaign ? '0' : campaign.RoundOffset) )
+    button.btn.btn-primary(type='submit') Submit
+
+  if errors
+    ul
+      for error in errors
+        li!= error.msg

@@ -389,3 +389,148 @@ exports.getParentList = async function(NodeID, PersonID) {
 
   return res;
 }
+
+exports.getCalendarList = async function(PersonID) {
+  let conn;
+  let res;
+  let query;
+  try {
+    conn = await InitPool.getConnection();
+
+    // Hmm... are Calendars global? For the moment we'll assume so.
+    let query = "SELECT * FROM Calendar";
+
+    res = await conn.query(query);
+  } catch(error) {
+    console.log("error in getCalendarList");
+    console.log(debugLine(error));
+    throw error;
+  } finally {
+    if (conn) conn.release();
+  }
+
+  return res;
+}
+
+exports.getCampaignList = async function(PersonID) {
+  let conn;
+  let res;
+  let query;
+  try {
+    conn = await InitPool.getConnection();
+
+    let query = "SELECT * FROM Campaign WHERE CreatorID=?";
+
+    res = await conn.query(query, [ PersonID ]);
+  } catch(error) {
+    console.log("error in getCampaignList");
+    console.log(debugLine(error));
+    throw error;
+  } finally {
+    if (conn) conn.release();
+  }
+
+  return res;
+}
+
+/* Saves the campaign data into the table.
+  If CampaignID is null a new record is inserted, otherwise update is used.
+
+  options: 
+    - doLog, if true, resulting query is logged
+*/
+exports.saveRecord = async function(recordData, tableName, primaryKey, options) {
+
+  let conn;
+  let res;
+  let query;
+  let dataArray = [];
+
+  try {
+    conn = await InitPool.getConnection();
+
+    if (recordData[primaryKey]) {
+      query = "UPDATE "+tableName+" SET ";
+
+      for(const property in recordData) {
+        if (property == primaryKey) { continue; }
+
+        query += property + "=? ";
+        dataArray.push(recordData[property]);
+      }
+      query += "WHERE "+primaryKey+"=?";      
+      dataArray.push(recordData[primaryKey]);
+    } else {
+      let valueList = "";
+      let firstLoop = true;
+      query = "INSERT INTO "+tableName+"("
+      for(const property in recordData) {
+        if (firstLoop) { firstLoop = false; }
+        else { 
+          query += ", ";
+          valueList += ", ";
+        };
+        query += property;
+        valueList += "?";
+        dataArray.push(recordData[property]);
+      }
+      query += ") VALUES ("+valueList+")";
+    }
+    if (options && options.doLog) {
+      console.log(query);
+    }
+    res = await conn.query(query, dataArray);
+  } catch(error) {
+    console.log("error in saveRecord");
+    console.log(debugLine(error));
+    throw error;
+  } finally {
+    if (conn) conn.release();
+  }
+
+  return res;
+}
+
+/*
+  options:
+    - doLog, if true, resulting query is logged
+    - fieldList, string or array of strings
+*/
+exports.readRecord = async function(tableName, primaryKey, options) {
+  let conn;
+  let res;
+  let query;
+
+  try {
+    query = "SELECT ";
+    if (options && options.fieldList) {
+      if (options.fieldList.forEach) {
+        let firstLoop = true;
+        options.fieldList.forEach((elm) => {
+          if (firstLoop) {firstLoop = false; }
+          else {
+            query += ", "
+          }
+          query += elm;
+        });
+        query += " ";
+      } else {
+        query += options.fieldList+" ";
+      }     
+    } else {
+      query += "* ";
+    }
+    query += "FROM "+tableName+" WHERE "+primaryKey+"=?";
+ 
+    if (options && options.doLog) {
+      console.log(query);
+    }
+    res = await conn.query(query, dataArray);
+  } catch(error) {
+    console.log("error in readRecord");
+    console.log(debugLine(error));
+    throw error;
+  } finally {
+    if (conn) conn.release();
+  }
+}

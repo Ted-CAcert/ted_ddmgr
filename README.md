@@ -33,3 +33,21 @@ Now you should be able to access the service as http://localhost:3000 in a brows
 In a productive environment one would probably use nginx as a forward proxy, so nginx handles SSL connections. Also the node service should be installed as a system service.
 
 [^1]: The first one inserts the record and a random salt, the second one updates the salt into the "real" password. 
+
+# Technical Description / Terminology / Memos
+
+## Tree
+
+The **Tree** menu item implements a [Thesaurus](https://en.wikipedia.org/wiki/Thesaurus_(information_retrieval)) which should help you to find all things you need when running a game session.
+
+An adventure setting (aka game module) is represented by a branch in the tree. Each node of the tree can contain pointers to different resources, like texts (for descriptions or game notes), NPCs or prepared encounters.
+
+## Campaign
+
+A **Campaign** represents a group of players playing multiple sessions in a game world. It includes calendar, a current game time and date. It also includes a list of "PCs", which usually changes over time.
+
+## Game time keeping
+
+Time keeping is done by counting melee rounds and adding them to an epoch start. An absolute date (like an epoch start) is internally counted as an integer year number plus a non negative integer day of year (DOY). New year's day is DOY 0. Conversion into months and weekdays has to be done with extra calendar code.
+
+Currently the code assumes that each year has a fixed number of days, so there are no leap years. But this is no dogma and may be expanded later.
