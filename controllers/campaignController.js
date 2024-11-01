@@ -69,6 +69,9 @@ exports.campaign_create_post = [
             RoundOffset: req.body.rounds,
             CreatorID: TheSession.PersonID,
         };
+        if (req.body.id) {
+            CampaignData.CampaignID = req.body.id;
+        }
         
     
         if (!errors.isEmpty()) {
@@ -103,4 +106,23 @@ exports.campaign_create_post = [
             res.redirect('/campaigns');
         }
     }),
-]
+];
+
+exports.campaign_detail = asyncHandler(async (req, res, next) => {
+    const errors = validationResult(req);
+    let TheSession = await UserModel.RequestSession(req, res);
+    if (! TheSession) return;
+    
+    const [CampaignData, CalendarData] = await Promise.all([
+        Campaign.getById(req.params.id, TheSession.PersonID),
+        Calendar.find(TheSession.PersonID),
+      ]);
+
+    res.render("campaign_form", {
+        title: "Modify Campaign",
+        calendars: CalendarData,
+        campaign: CampaignData[0],
+        errors: errors.array(),
+    });
+  
+});

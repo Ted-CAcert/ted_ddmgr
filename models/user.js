@@ -28,6 +28,17 @@ function NewSession(PersonOrSessionID) {
         }
     }
 
+    this.save = function() {
+        return DB.saveRecord(this.theRec, "UserSession", "ID");
+    }
+
+    this.setCampaign = function(campaignID) {
+        this.theRec.CurCampaignID = campaignID;
+        this.save();
+        // additionally update CurCampaignID of the Person record
+        DB.saveRecord({PersonID: this.PersonID, CurCampaignID: campaignID }, "Person", "PersonID", {});
+    }
+
     if (typeof(PersonOrSessionID) == 'bigint' || typeof(PersonOrSessionID) == 'number') {
         // Is an integer ==> PersonID
         this.SessionID = Buffer.from(crypto.randomBytes(30)).toString('base64');
@@ -51,6 +62,7 @@ exports.User= function (login) {
 
     this.load = async function() { this.DataRow = await DB.getUserFromDB(login); };
     this.checkPassword = async function(Password) { return await DB.checkUserPassword(this.Login, Password); };
+    this.setCampaign = async function(campaignID) { return };
 }
 
 exports.RequestSession = async function(req, res, next) {

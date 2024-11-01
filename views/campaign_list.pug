@@ -8,7 +8,7 @@ block content
     ul
       each campaign in campaign_list
         li
-          a(href="test") #{campaign.CampaignName}
+          a(href="campaign/"+campaign.CampaignID) #{campaign.CampaignName}
           |  (#{campaign.CampaignID})
 
   else

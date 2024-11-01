@@ -31,10 +31,22 @@ router.get("/campaign/:id/update", campaign_controller.campaign_update_get);
 
 // POST request to update Campaign.
 router.post("/campaign/:id/update", campaign_controller.campaign_update_post);
+*/
+router.get('/campaign/:id/setCampaign', function(req, res, next) {
+  let SessionPromise = UserModel.RequestSession(req, res);
+  if (SessionPromise) {
+    SessionPromise.then((TheSession) => {
+      TheSession.setCampaign(req.params.id);
+      return campaign_controller.campaign_detail(req, res, next);
+    });
+  }
+
+  return;
+});
 
 // GET request for one Campaign.
 router.get("/campaign/:id", campaign_controller.campaign_detail);
-*/
+
 // GET request for list of all Campaign items.
 router.get("/campaigns", campaign_controller.campaign_list);
 

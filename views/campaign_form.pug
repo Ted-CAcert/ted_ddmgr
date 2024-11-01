@@ -3,7 +3,11 @@ extends layout
 block content
   h1= title
 
-  form(method='POST')
+  form(method='POST' action='/campaign/create')
+    if campaign && campaign.CampaignID
+      div.form-group
+        label(for='id') Id:
+        input#title.form-control(type='text', name='id' readonly value=(undefined===campaign ? '' : campaign.CampaignID.toString()) )
     div.form-group
       label(for='title') Title:
       input#title.form-control(type='text', placeholder='Name of campaign' name='title' required value=(undefined===campaign ? '' : campaign.CampaignName) )
@@ -13,7 +17,7 @@ block content
         option(value='') --Please select a calendar--
         for calendar in calendars
           if campaign
-            if calendar.CalendarID.toString()===campaign.CalendarID.toString()
+            if calendar.CalendarID==campaign.CalendarID
               option(value=calendar.CalendarID.toString() selected) #{calendar.CalendarName}
             else
               option(value=calendar.CalendarID.toString()) #{calendar.CalendarName}
@@ -27,8 +31,10 @@ block content
       input#epoch_doy.form-control(type='number', placeholder='Day of Year of campaign start' name='epoch_doy' required value=(undefined===campaign ? '0' : campaign.EpochDOY) )
     div.form-group
       label(for='rounds') Passed rounds since start:
-      input#rounds.form-control(type='number', placeholder='Number of passed rounds' name='rounds' value=(undefined===campaign ? '0' : campaign.RoundOffset) )
+      input#rounds.form-control(type='number', placeholder='Number of passed rounds' name='rounds' value=(undefined===campaign ? '0' : campaign.RoundOffset.toString()) )
     button.btn.btn-primary(type='submit') Submit
+    div.link-set
+      a(href=campaign.CampaignID+"/setCampaign") Set as active campaign
 
   if errors
     ul

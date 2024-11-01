@@ -433,8 +433,8 @@ exports.getCampaignList = async function(PersonID) {
   return res;
 }
 
-/* Saves the campaign data into the table.
-  If CampaignID is null a new record is inserted, otherwise update is used.
+/* Saves record data into a database table.
+  If the primary key value is null, a new record is inserted, otherwise update is used.
 
   options: 
     - doLog, if true, resulting query is logged
@@ -450,15 +450,22 @@ exports.saveRecord = async function(recordData, tableName, primaryKey, options) 
     conn = await InitPool.getConnection();
 
     if (recordData[primaryKey]) {
+      let firstLine = true;
+
       query = "UPDATE "+tableName+" SET ";
 
       for(const property in recordData) {
         if (property == primaryKey) { continue; }
 
-        query += property + "=? ";
+        if (firstLine) {
+          firstLine = false;
+        } else {
+          query += ", "
+        }
+        query += property + "=?";
         dataArray.push(recordData[property]);
       }
-      query += "WHERE "+primaryKey+"=?";      
+      query += " WHERE "+primaryKey+"=?";      
       dataArray.push(recordData[primaryKey]);
     } else {
       let valueList = "";
@@ -496,12 +503,15 @@ exports.saveRecord = async function(recordData, tableName, primaryKey, options) 
     - doLog, if true, resulting query is logged
     - fieldList, string or array of strings
 */
-exports.readRecord = async function(tableName, primaryKey, options) {
+exports.readRecord = async function(recID, tableName, primaryKey, options) {
   let conn;
   let res;
   let query;
+  let dataArray = [];
 
   try {
+    conn = await InitPool.getConnection();
+
     query = "SELECT ";
     if (options && options.fieldList) {
       if (options.fieldList.forEach) {
@@ -521,6 +531,14 @@ exports.readRecord = async function(tableName, primaryKey, options) {
       query += "* ";
     }
     query += "FROM "+tableName+" WHERE "+primaryKey+"=?";
+    dataArray.push(recID);
+
+    if (options.restricts) {
+      for(const key of Object.keys(options.restricts)) {
+        query += " AND "+key+"=?";
+        dataArray.push(options.restricts[key]);
+      }
+    }
  
     if (options && options.doLog) {
       console.log(query);
@@ -533,4 +551,5 @@ exports.readRecord = async function(tableName, primaryKey, options) {
   } finally {
     if (conn) conn.release();
   }
+  return res;
 }
