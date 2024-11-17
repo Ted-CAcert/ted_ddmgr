@@ -11,9 +11,12 @@ exports.node_get = asyncHandler(async (req, res, next) => {
 
         await TheNode.WaitForLoad();
 
-        res.render('node', { title: 'Teds D&D Manager', NodeName: TheNode.GetTitle(), 
-                             Data: TheNode.DataRow[0],
-                             ChildList: TheNode.Children, Parent: TheNode.Parent[0] });
+        res.render('node', { 
+            title: 'Teds D&D Manager', NodeName: TheNode.GetTitle(), 
+            Data: TheNode.DataRow[0],
+            ChildList: TheNode.Children, Parent: TheNode.Parent[0],
+            stringList: TheSession.stringList,
+        });
     }
   
     return;  
@@ -41,7 +44,9 @@ exports.node_post = [
 
             res.render('node', { title: 'Teds D&D Manager', NodeName: TheNode.GetTitle(), 
                 Data: TheNode.DataRow[0],
-                ChildList: TheNode.Children, Parent: TheNode.Parent[0] });
+                ChildList: TheNode.Children, Parent: TheNode.Parent[0],
+                stringList: TheSession.stringList,
+            });
 }
     
         return;  

@@ -33,6 +33,8 @@ block content
       label(for='rounds') Passed rounds since start:
       input#rounds.form-control(type='number', placeholder='Number of passed rounds' name='rounds' value=(undefined===campaign ? '0' : campaign.RoundOffset.toString()) )
     button.btn.btn-primary(type='submit') Submit
+    div.link-back
+      a(href="/campaigns") Back
     div.link-set
       a(href=campaign.CampaignID+"/setCampaign") Set as active campaign
 

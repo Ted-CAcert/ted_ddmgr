@@ -11,19 +11,48 @@ function NewSession(PersonOrSessionID) {
     this.SessionID = null;
     this.loadPromise = null;
     this.theRec = null;
+    this.stringList = {
+        PersonName: null,
+        CurCampaign: "",
+    };
 
+    this.loadStringList = function() {
+        let promiseList = [];
+        if (this.PersonID && !this.stringList.PersonName) {
+            promiseList.push(
+                DB.readRecord(this.PersonID, "Person", "PersonID", { fieldList:  [ "PersonLogin", "PersonName" ] })
+                  .then((data) => {
+                    this.stringList.PersonName = data[0].PersonName ? data[0].PersonName : data[0].PersonLogin;
+                  })
+            )
+        }
+        if (this.theRec.CurCampaignID && !this.stringList.CurCampaign) {
+            promiseList.push(
+                DB.readRecord(this.theRec.CurCampaignID, "Campaign", "CampaignID", { fieldList: "CampaignName" })
+                  .then((data) => {
+                    this.stringList.CurCampaign = data[0].CampaignName;
+            }));
+        }
+    
+
+        if (promiseList.length) {
+            return Promise.all(promiseList);
+        } else {
+            return Promise.resolve()
+        }
+    }
     this.initFromRec = function() {
         // SessionID sollte immer schon gesetzt sein.
         this.PersonID = this.theRec.PersonID;
+        this.loadPromise = this.loadStringList().then(() => {
+            SessionCache.set(this.SessionID, { "Rec": this.theRec, "stringList": this.stringList });
+        });
+        return this.loadPromise;
     }
 
     this.WaitForLoad = async function() { 
         if (this.loadPromise) {
-            this.theRec = await this.loadPromise;
-            if (this.theRec && this.theRec.PersonID) {
-              SessionCache.set(this.SessionID, this.theRec);
-              this.initFromRec();
-            }
+            await this.loadPromise;
             this.loadPromise = null;
         }
     }
@@ -34,24 +63,37 @@ function NewSession(PersonOrSessionID) {
 
     this.setCampaign = function(campaignID) {
         this.theRec.CurCampaignID = campaignID;
+        this.stringList.CurCampaign = null;
         this.save();
         // additionally update CurCampaignID of the Person record
         DB.saveRecord({PersonID: this.PersonID, CurCampaignID: campaignID }, "Person", "PersonID", {});
+        this.loadStringList();
     }
 
     if (typeof(PersonOrSessionID) == 'bigint' || typeof(PersonOrSessionID) == 'number') {
         // Is an integer ==> PersonID
         this.SessionID = Buffer.from(crypto.randomBytes(30)).toString('base64');
         this.PersonID = PersonOrSessionID;
-        this.loadPromise = DB.CreateUserSession(this.PersonID, this.SessionID);
+        this.loadPromise = DB.CreateUserSession(this.PersonID, this.SessionID)
+                             .then((rec) => {
+                                this.theRec = rec;
+                                return this.initFromRec();
+                             });
     } else {
         this.SessionID=PersonOrSessionID;
-        this.theRec = SessionCache.get(this.SessionID);
+        let TheCache = SessionCache.get(this.SessionID);
+        if (TheCache) {
+          this.theRec = TheCache.Rec;
+          this.stringList = TheCache.stringList;
+        }
         if (!this.theRec) {
-            this.loadPromise = DB.LoadUserSession(this.SessionID);
+            this.loadPromise = DB.LoadUserSession(this.SessionID)
+                .then((rec) => {
+                    this.theRec = rec;
+                    return this.initFromRec();
+            });
         } else {
-            this.initFromRec();
-            this.loadPromise = null; // Sollte es eh schon sein...
+            this.loadPromise = this.initFromRec();
         }
     }
     

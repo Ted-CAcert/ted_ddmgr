@@ -6,9 +6,9 @@ const campaign_controller = require("../controllers/campaignController");
 
 /* GET home page. */
 router.get('/', async function(req, res, next) {
-  let TheSession = UserModel.RequestSession(req, res);
+  let TheSession = await UserModel.RequestSession(req, res);
   if (TheSession) {
-    res.render('index', { title: 'Teds D&D Manager' });
+    res.render('index', { title: 'Teds D&D Manager', stringList: TheSession.stringList });
   }
 
   return;
@@ -37,7 +37,7 @@ router.get('/campaign/:id/setCampaign', function(req, res, next) {
   if (SessionPromise) {
     SessionPromise.then((TheSession) => {
       TheSession.setCampaign(req.params.id);
-      return campaign_controller.campaign_detail(req, res, next);
+      return campaign_controller.campaign_list(req, res, next);
     });
   }
 

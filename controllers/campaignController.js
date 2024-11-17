@@ -13,7 +13,8 @@ exports.campaign_list = asyncHandler(async (req, res, next) => {
   
     res.render("campaign_list", {
         title: "Available Campaigns",
-        campaign_list: campaignList,
+        campaign_list: campaignList, 
+        stringList: TheSession.stringList,
       });
 });
 
@@ -34,6 +35,7 @@ exports.campaign_create_get = asyncHandler(async (req, res, next) => {
     res.render("campaign_form", {
       title: "Create Campaign",
       calendars: allCalendars,
+      stringList: TheSession.stringList,
     });
   });
 
@@ -95,10 +97,12 @@ exports.campaign_create_post = [
                 }
             }
             res.render("campaign_form", {
-            title: "Create Campaign",
-            calendars: allCalendars,
-            campaign: CampaignData,
-            errors: errors.array(),
+              title: "Create Campaign",
+              calendars: allCalendars,
+              campaign: CampaignData,
+              errors: errors.array(),
+
+              stringList: TheSession.stringList,
             });
         } else {
             // Data from form is valid. Save book.
@@ -123,6 +127,8 @@ exports.campaign_detail = asyncHandler(async (req, res, next) => {
         calendars: CalendarData,
         campaign: CampaignData[0],
         errors: errors.array(),
+
+        stringList: TheSession.stringList,
     });
   
 });

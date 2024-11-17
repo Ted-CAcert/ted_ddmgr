@@ -21,4 +21,10 @@ html
               li
                 a(href='/node/0') Tree
         div(class='col-sm-9')
+          block header
+            if stringList
+              if stringList.CurCampaign
+                div(class='curCampaign') #{stringList.CurCampaign}
+              if stringList.PersonName
+                div(class='personName') #{stringList.PersonName}
           block content
