@@ -1,0 +1,45 @@
+extends layout
+
+block content
+  h1= title
+
+  form(method='POST' action='/chars/save')
+    if char && char.NPCID
+      div.form-group
+        label(for='id') Id:
+        input#title.form-control(type='text', name='id' readonly value=(undefined===char ? '' : char.NPCID.toString()) )
+    div.form-group
+      label(for='name') Name:
+      input#title.form-control(type='text', placeholder='Name of character' name='name' value=(undefined===char ? '' : char.CharName) )
+      label(for='comment') DM Comment:
+      input#title.form-control(type='text', placeholder='DM Info' name='comment' value=(undefined===char ? '' : char.DMComment) )
+      label(for='curac') Current AC:
+      input#title.form-control(type='text', placeholder='Current AC' name='curac' value=(undefined===char ? '' : char.CurAC) )
+      label(for='curbab') Current BAB:
+      input#title.form-control(type='text', placeholder='Current BAB' name='curbab' value=(undefined===char ? '' : char.CurBAB) )
+      label(for='curreflex') Current Reflex Save:
+      input#title.form-control(type='text', placeholder='Current Reflex Save' name='curreflex' value=(undefined===char ? '' : char.CurRefSave) )
+      label(for='curfortitude') Current Fortitude Save:
+      input#title.form-control(type='text', placeholder='Current Fortitude Save' name='curfortitude' value=(undefined===char ? '' : char.CurFortSave) )
+      label(for='curwill') Current Will Save:
+      input#title.form-control(type='text', placeholder='Current Will Save' name='curwill' value=(undefined===char ? '' : char.CurWillSave) )
+      label(for='curhp') Current HP:
+      input#title.form-control(type='text', placeholder='Current HPs' name='curhp' value=(undefined===char ? '' : char.CurHP) )
+      label(for='curmaxhp') Current Maximum HP:
+      input#title.form-control(type='text', placeholder='Current Maximum HPs' name='curmaxhp' value=(undefined===char ? '' : char.CurMaxHP) )
+      label(for='curmove') Current Move Rate:
+      input#title.form-control(type='text', placeholder='Current Move Rate' name='curmove' value=(undefined===char ? '' : char.CurMove) )
+      button.btn.btn-primary(type='submit') Submit
+
+  h2 OR
+  form(method='POST' action='/chars/upload' enctype='multipart/form-data')
+    if char && char.NPCID
+      div.form-group
+        label(for='id') Id:
+        input#title.form-control(type='text', name='id' readonly value=(undefined===char ? '' : char.NPCID.toString()) )
+    div.form-group
+      label(for='xmlfile') Upload XML File:
+      input#title.form-control(type='file', name='xmlfile')
+      button.btn.btn-primary(type='submit') Submit
+  
+  a(href="chars") Back
