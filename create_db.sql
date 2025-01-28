@@ -15,6 +15,26 @@ CREATE OR REPLACE TABLE Organisation(
 GRANT SELECT ON ddmgr.Organisation TO api@localhost;
 -- No Insert grant for the moment...
 
+CREATE OR REPLACE TABLE Campaign(
+    CampaignID BIGINT AUTO_INCREMENT PRIMARY KEY,
+    CreatorID BIGINT,
+    OrgID BIGINT,
+    CampaignName TEXT NOT NULL,
+    ParentCampaignID BIGINT,
+    CalendarID BIGINT,
+    EpochYear INT,
+    EpochDOY INT,
+    RoundOffset BIGINT,
+
+    FOREIGN KEY (OrgID) REFERENCES Organisation(OrganisationID)
+      ON UPDATE CASCADE ON DELETE SET NULL,
+    FOREIGN KEY (CreatorID) REFERENCES Person(PersonID)
+      ON UPDATE CASCADE ON DELETE SET NULL
+);
+GRANT SELECT ON ddmgr.Campaign TO api@localhost;
+GRANT INSERT ON ddmgr.Campaign TO api@localhost;
+GRANT UPDATE ON ddmgr.Campaign TO api@localhost;
+
 CREATE OR REPLACE TABLE Person(
     PersonID BIGINT AUTO_INCREMENT PRIMARY KEY,
     PrimaryOrgID BIGINT, -- Organisation the person is currently acting for
@@ -23,10 +43,14 @@ CREATE OR REPLACE TABLE Person(
     CreatedTS TIMESTAMP,
     LatestLogin TIMESTAMP,
     Deleted BOOLEAN,
-    PasswordHash TEXT
+    PasswordHash TEXT,
+    CurCampaignID BIGINT,
 
-    FOREIGN KEY (PrimaryOrgID) REFERENCES Organisation(OrganisationID)
-      ON UPDATE CASCADE ON DELETE SET NULL
+    CONSTRAINT fk_person_organisation FOREIGN KEY (PrimaryOrgID) REFERENCES Organisation(OrganisationID)
+      ON UPDATE CASCADE ON DELETE SET NULL,
+    CONSTRAINT fk_person_campaign FOREIGN KEY (CurCampaignID) REFERENCES Campaign(CampaignID)
+      ON UPDATE CASCADE ON DELETE SET NULL;
+
 );
 GRANT SELECT ON ddmgr.Person TO api@localhost;
 GRANT INSERT ON ddmgr.Person TO api@localhost;
@@ -59,10 +83,12 @@ CREATE OR REPLACE TABLE UserSession(
   CreateTS TIMESTAMP DEFAULT NULL,
   LastUsedTS TIMESTAMP DEFAULT NULL,
   SessionStatus LONGTEXT,
+  CurCampaignID BIGINT,
 
   CONSTRAINT fk_session_person FOREIGN KEY (PersonID) REFERENCES Person(PersonID)
       ON UPDATE CASCADE ON DELETE CASCADE
-);
+  CONSTRAINT fk_session_campaign FOREIGN KEY (CurCampaignID) REFERENCES Campaign(CampaignID) 
+      ON UPDATE CASCADE ON DELETE SET NULL;);
  GRANT SELECT, INSERT, UPDATE, DELETE ON ddmgr.UserSession TO api@localhost;
 
 CREATE OR REPLACE TABLE NodeTree(
@@ -113,26 +139,6 @@ DELIMITER ;
 
 GRANT EXECUTE ON FUNCTION FCT_CheckPassword TO api@localhost;
 
-CREATE OR REPLACE TABLE Campaign(
-    CampaignID BIGINT AUTO_INCREMENT PRIMARY KEY,
-    CreatorID BIGINT,
-    OrgID BIGINT,
-    CampaignName TEXT NOT NULL,
-    ParentCampaignID BIGINT,
-    CalendarID BIGINT,
-    EpochYear INT,
-    EpochDOY INT,
-    RoundOffset BIGINT,
-
-    FOREIGN KEY (OrgID) REFERENCES Organisation(OrganisationID)
-      ON UPDATE CASCADE ON DELETE SET NULL,
-    FOREIGN KEY (CreatorID) REFERENCES Person(PersonID)
-      ON UPDATE CASCADE ON DELETE SET NULL
-);
-GRANT SELECT ON ddmgr.Campaign TO api@localhost;
-GRANT INSERT ON ddmgr.Campaign TO api@localhost;
-GRANT UPDATE ON ddmgr.Campaign TO api@localhost;
-
 CREATE OR REPLACE TABLE Calendar(
     CalendarID BIGINT AUTO_INCREMENT PRIMARY KEY,
     CreatorID BIGINT,
@@ -150,6 +156,7 @@ CREATE OR REPLACE TABLE NPC(
     NPCID BIGINT AUTO_INCREMENT PRIMARY KEY,
     CreatorID BIGINT,
     OrgID BIGINT,
+    CharUID UUID UNIQUE,
     CharName TEXT,
     DMComment TEXT,
 
@@ -160,7 +167,7 @@ CREATE OR REPLACE TABLE NPC(
     CurWillSave INT,
     CurHP INT,
     CurMaxHP INT,
-    CorMove INT,
+    CurMove INT,
 
     XMLData LONGTEXT,
 
@@ -175,5 +182,5 @@ GRANT UPDATE ON ddmgr.NPC TO api@localhost;
 
 -- Current Version, should always be the last line of the script
 INSERT INTO DBVersion(VersionNum, VersionTS)
-  SELECT 1, NOW() WHERE NOT EXISTS(SELECT 1 FROM DBVersion WHERE VersionNum=1);
+  SELECT 2, NOW() WHERE NOT EXISTS(SELECT 1 FROM DBVersion WHERE VersionNum=2);
   

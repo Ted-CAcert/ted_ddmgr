@@ -1,0 +1,10 @@
+extends layout
+
+block content
+  h1= title
+
+  each Msg in MsgList
+    if Msg
+      p #{Msg}
+    
+  a(href="/chars") Continue

@@ -20,4 +20,8 @@ const upload = multer();
 router.post('/upload', upload.single('xmlfile'), function(req, res, next) {
   controller.characterUpload(req, res, next);
 });
+
+router.post('/import', controller.characterImport);
+
+
 module.exports = router;

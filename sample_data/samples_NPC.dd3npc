@@ -1,0 +1,615 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dd35:NPCExport xmlns="http://www.adamczak.com/Andy" xmlns:dd35="http://www.adamczak.com/Andy/D&amp;D">
+  <dd35:Info baseGroup="" />
+  <dd35:NPCs>
+    <dd35:NPC name="Gawain" v="9" type="Humanoid" subtype="Human" npcGroup="Orlane/01 Village/10. Mayor's Residence">
+      <dd35:Stats race="Human" gender="m" alignment="cn" deity="" age="17" weight="150" height="60" eyes="" hair="" skin="" xp="0" group="" cr="1" size="m" hd="0" hitDie="8" levelAdj="0">
+        <dd35:Attributes s="7" d="10" c="12" i="11" w="5" ch="10" />
+        <dd35:Saves />
+        <dd35:AC />
+        <dd35:Movement>
+          <dd35:Move name="Walk" at="ex" ls="30" ms="20" hs="20" />
+        </dd35:Movement>
+        <dd35:Senses />
+        <dd35:Skills>
+          <dd35:Skill name="Handle Animal" ranks="4" />
+          <dd35:Skill name="Knowledge" subskill="local" ranks="4" />
+          <dd35:Skill name="Ride" ranks="4" />
+        </dd35:Skills>
+        <dd35:Feats>
+          <dd35:Feat name="Martial Weapon Proficiency" appliesTo="Handaxe" st="4" />
+        </dd35:Feats>
+        <dd35:Classes>
+          <dd35:Class type="ra" name="Racial" level="0">
+            <dd35:Stats>
+              <dd35:AbilityChoices>
+                <dd35:Choice id="0" a="bonusFeat" at="2" cid="0" l="0" c="Martial Weapon Proficiency" s1="Handaxe" />
+              </dd35:AbilityChoices>
+            </dd35:Stats>
+          </dd35:Class>
+          <dd35:Class type="cl" name="Commoner" level="1">
+            <dd35:Stats>
+              <dd35:AbilityChoices />
+            </dd35:Stats>
+          </dd35:Class>
+        </dd35:Classes>
+        <dd35:Abilities>
+          <dd35:Ability id="0" st="2">
+            <dd35:Info id="0" type="bonusFeat" at="ex" info1="sf" info2="Martial Weapon Proficiency" info3="Handaxe" />
+          </dd35:Ability>
+        </dd35:Abilities>
+        <dd35:NaturalAttacks />
+        <dd35:AttackOptions>
+          <dd35:Attack>
+            <dd35:Item>
+              <dd35:Primary>
+                <dd35:AO w="t" c="1" />
+              </dd35:Primary>
+            </dd35:Item>
+          </dd35:Attack>
+          <dd35:Full>
+            <dd35:Item>
+              <dd35:Primary>
+                <dd35:AO w="t" c="1" />
+              </dd35:Primary>
+            </dd35:Item>
+          </dd35:Full>
+        </dd35:AttackOptions>
+        <dd35:LevelInfos>
+          <dd35:LevelInfo level="1" classLevel="1" type="cl" className="Commoner" hp="2" hd="4" />
+        </dd35:LevelInfos>
+        <dd35:Languages>
+          <dd35:Language name="Common" u="t" s="t" c="0" />
+        </dd35:Languages>
+        <dd35:Morphology v="1">
+          <dd35:BodyParts heads="1" arms="2" legs="2" hands="2" claws="0" wings="0" tails="0" fins="0" tentacles="0" eyes="2" mouths="1" horns="0" tusks="0" antennae="0" beaks="0" stalks="0" stingers="0" />
+          <dd35:Wielding ph="1" oh="1" />
+        </dd35:Morphology>
+        <dd35:ActiveState>
+          <dd35:AM />
+        </dd35:ActiveState>
+        <dd35:Description />
+        <dd35:Gear nID="0" gb="" gic="t" es="">
+          <dd35:Item v="3" id="87" name="Chain Shirt" type="armor" size="m" c="1">
+            <dd35:Armor />
+          </dd35:Item>
+          <dd35:Item v="3" id="89" name="Handaxe" type="weapon" size="m" c="1" e="t">
+            <dd35:Weapon />
+          </dd35:Item>
+          <dd35:Item v="3" id="88" name="Light Wooden Shield" type="armor" size="m" c="1">
+            <dd35:Armor />
+          </dd35:Item>
+        </dd35:Gear>
+        <dd35:CombatInfo />
+      </dd35:Stats>
+      <dd35:History created="63603751421" />
+    </dd35:NPC>
+    <dd35:NPC name="Jill" v="9" type="Humanoid" subtype="Human" npcGroup="Orlane/01 Village/10. Mayor's Residence">
+      <dd35:Stats race="Human" gender="f" alignment="ng" deity="" age="16" weight="150" height="60" eyes="" hair="" skin="" xp="0" group="" cr="1" size="m" hd="0" hitDie="8" levelAdj="0">
+        <dd35:Attributes s="7" d="10" c="12" i="11" w="5" ch="10" />
+        <dd35:Saves />
+        <dd35:AC />
+        <dd35:Movement>
+          <dd35:Move name="Walk" at="ex" ls="30" ms="20" hs="20" />
+        </dd35:Movement>
+        <dd35:Senses />
+        <dd35:Skills>
+          <dd35:Skill name="Craft" subskill="leatherworking" ranks="4" />
+          <dd35:Skill name="Hide" ranks="2" />
+          <dd35:Skill name="Use Rope" ranks="4" />
+        </dd35:Skills>
+        <dd35:Feats>
+          <dd35:Feat name="Self-Sufficient" st="4" />
+        </dd35:Feats>
+        <dd35:Classes>
+          <dd35:Class type="ra" name="Racial" level="0">
+            <dd35:Stats>
+              <dd35:AbilityChoices>
+                <dd35:Choice id="0" a="bonusFeat" at="2" cid="0" l="0" c="Self-Sufficient" />
+              </dd35:AbilityChoices>
+            </dd35:Stats>
+          </dd35:Class>
+          <dd35:Class type="cl" name="Commoner" level="1">
+            <dd35:Stats>
+              <dd35:AbilityChoices />
+            </dd35:Stats>
+          </dd35:Class>
+        </dd35:Classes>
+        <dd35:Abilities>
+          <dd35:Ability id="0" st="2">
+            <dd35:Info id="0" type="bonusFeat" at="ex" info1="sf" info2="Self-Sufficient" />
+          </dd35:Ability>
+        </dd35:Abilities>
+        <dd35:NaturalAttacks />
+        <dd35:AttackOptions>
+          <dd35:Attack>
+            <dd35:Item>
+              <dd35:Primary>
+                <dd35:AO w="t" c="1" />
+              </dd35:Primary>
+            </dd35:Item>
+          </dd35:Attack>
+          <dd35:Full>
+            <dd35:Item>
+              <dd35:Primary>
+                <dd35:AO w="t" c="1" />
+              </dd35:Primary>
+            </dd35:Item>
+          </dd35:Full>
+        </dd35:AttackOptions>
+        <dd35:LevelInfos>
+          <dd35:LevelInfo level="1" classLevel="1" type="cl" className="Commoner" hp="4" hd="4" />
+        </dd35:LevelInfos>
+        <dd35:Languages>
+          <dd35:Language name="Common" u="t" s="t" c="0" />
+        </dd35:Languages>
+        <dd35:Morphology v="1">
+          <dd35:BodyParts heads="1" arms="2" legs="2" hands="2" claws="0" wings="0" tails="0" fins="0" tentacles="0" eyes="2" mouths="1" horns="0" tusks="0" antennae="0" beaks="0" stalks="0" stingers="0" />
+          <dd35:Wielding ph="1" oh="1" />
+        </dd35:Morphology>
+        <dd35:ActiveState>
+          <dd35:AM />
+        </dd35:ActiveState>
+        <dd35:Description>Ältere der beiden Töchter Zakarias'</dd35:Description>
+        <dd35:CombatInfo />
+      </dd35:Stats>
+      <dd35:History created="63603768994" />
+    </dd35:NPC>
+    <dd35:NPC name="Sandra Ormond" v="9" type="Humanoid" subtype="Human" npcGroup="Orlane/01 Village/10. Mayor's Residence">
+      <dd35:Stats race="Human" gender="f" alignment="cn" deity="" age="43" weight="150" height="60" eyes="" hair="" skin="" xp="3000" cr="3" size="m" hd="0" hitDie="8" levelAdj="0">
+        <dd35:Attributes s="8" d="9" c="7" i="8" w="14" ch="17" />
+        <dd35:Saves />
+        <dd35:AC />
+        <dd35:Movement>
+          <dd35:Move name="Walk" at="ex" ls="30" ms="20" hs="20" />
+        </dd35:Movement>
+        <dd35:Skills>
+          <dd35:Skill name="Craft" subskill="tailoring" ranks="3" />
+          <dd35:Skill name="Craft" subskill="weaving" ranks="3" />
+          <dd35:Skill name="Heal" ranks="3" />
+        </dd35:Skills>
+        <dd35:Feats>
+          <dd35:Feat name="Toughness" st="4" />
+        </dd35:Feats>
+        <dd35:Classes>
+          <dd35:Class type="ra" name="Racial" level="0" r="t">
+            <dd35:Stats>
+              <dd35:AbilityChoices>
+                <dd35:Choice id="0" a="bonusFeat" at="2" cid="0" l="0" c="Toughness" />
+              </dd35:AbilityChoices>
+            </dd35:Stats>
+          </dd35:Class>
+          <dd35:Class type="cl" name="Commoner" level="3">
+            <dd35:Stats>
+              <dd35:AbilityChoices />
+            </dd35:Stats>
+          </dd35:Class>
+        </dd35:Classes>
+        <dd35:Abilities>
+          <dd35:Ability id="0" st="2">
+            <dd35:Info id="0" type="bonusFeat" at="ex" info1="sf" info2="Toughness" />
+          </dd35:Ability>
+        </dd35:Abilities>
+        <dd35:NaturalAttacks />
+        <dd35:AttackOptions>
+          <dd35:Attack>
+            <dd35:Item>
+              <dd35:Primary>
+                <dd35:AO w="t" c="1" />
+              </dd35:Primary>
+            </dd35:Item>
+          </dd35:Attack>
+          <dd35:Full>
+            <dd35:Item>
+              <dd35:Primary>
+                <dd35:AO w="t" c="1" />
+              </dd35:Primary>
+            </dd35:Item>
+          </dd35:Full>
+        </dd35:AttackOptions>
+        <dd35:LevelInfos>
+          <dd35:LevelInfo level="1" classLevel="1" type="cl" className="Commoner" hp="3" hd="4" />
+          <dd35:LevelInfo level="2" classLevel="2" type="cl" className="Commoner" hp="3" hd="4" />
+          <dd35:LevelInfo level="3" classLevel="3" type="cl" className="Commoner" hp="4" hd="4" />
+        </dd35:LevelInfos>
+        <dd35:Languages>
+          <dd35:Language name="Common" u="t" s="t" c="0" />
+        </dd35:Languages>
+        <dd35:Morphology v="1">
+          <dd35:BodyParts heads="1" arms="2" legs="2" hands="2" claws="0" wings="0" tails="0" fins="0" tentacles="0" eyes="2" mouths="1" horns="0" tusks="0" antennae="0" beaks="0" stalks="0" stingers="0" />
+          <dd35:Wielding ph="1" oh="1" />
+        </dd35:Morphology>
+        <dd35:ActiveState>
+          <dd35:AM t="0" />
+          <dd35:Active />
+        </dd35:ActiveState>
+        <dd35:Description>Zakarias' whife</dd35:Description>
+        <dd35:Gear nID="0" gb="" gic="t" es="" />
+        <dd35:CombatInfo />
+      </dd35:Stats>
+      <dd35:History created="63603746735" />
+    </dd35:NPC>
+    <dd35:NPC name="Sandro" v="9" type="Humanoid" subtype="Human" npcGroup="Orlane/01 Village/10. Mayor's Residence">
+      <dd35:Stats race="Human" gender="m" alignment="ln" deity="" age="19" weight="150" height="60" eyes="" hair="" skin="" xp="0" group="" cr="1" size="m" hd="0" hitDie="8" levelAdj="0">
+        <dd35:Attributes s="17" d="16" c="10" i="9" w="10" ch="16" />
+        <dd35:Saves />
+        <dd35:AC />
+        <dd35:Movement>
+          <dd35:Move name="Walk" at="ex" ls="30" ms="20" hs="20" />
+        </dd35:Movement>
+        <dd35:Senses />
+        <dd35:Skills>
+          <dd35:Skill name="Climb" ranks="4" />
+          <dd35:Skill name="Handle Animal" ranks="4" />
+        </dd35:Skills>
+        <dd35:Feats>
+          <dd35:Feat name="Armor Proficiency (Heavy)" st="2" cl="1" cName="Fighter" />
+          <dd35:Feat name="Armor Proficiency (Light)" st="2" cl="1" cName="Fighter" />
+          <dd35:Feat name="Armor Proficiency (Medium)" st="2" cl="1" cName="Fighter" />
+          <dd35:Feat name="Improved Shield Bash" st="2" cl="1" cName="Fighter" />
+          <dd35:Feat name="Improved Unarmed Strike" st="4" />
+          <dd35:Feat name="Martial Weapon Proficiency" st="2" cl="1" cName="Fighter" />
+          <dd35:Feat name="Shield Proficiency" st="2" cl="1" cName="Fighter" />
+          <dd35:Feat name="Simple Weapon Proficiency" st="2" cl="1" cName="Fighter" />
+          <dd35:Feat name="Tower Shield Proficiency" st="2" cl="1" cName="Fighter" />
+        </dd35:Feats>
+        <dd35:Classes>
+          <dd35:Class type="ra" name="Racial" level="0">
+            <dd35:Stats>
+              <dd35:AbilityChoices>
+                <dd35:Choice id="0" a="bonusFeat" at="2" cid="0" l="0" c="Improved Unarmed Strike" />
+              </dd35:AbilityChoices>
+            </dd35:Stats>
+          </dd35:Class>
+          <dd35:Class type="cl" name="Fighter" level="1">
+            <dd35:Stats>
+              <dd35:AbilityChoices>
+                <dd35:Choice id="0" a="bonusFeat" at="4" cid="0" l="1" c="Improved Shield Bash" />
+              </dd35:AbilityChoices>
+            </dd35:Stats>
+          </dd35:Class>
+        </dd35:Classes>
+        <dd35:Abilities>
+          <dd35:Ability id="0" st="2">
+            <dd35:Info id="0" type="bonusFeat" at="ex" info1="sf" info2="Improved Unarmed Strike" />
+          </dd35:Ability>
+          <dd35:Ability id="0" st="4" cl="1" icli="t" cName="Fighter">
+            <dd35:Info id="0" type="bonusFeat" at="ex" info1="sf" info2="Improved Shield Bash" />
+          </dd35:Ability>
+        </dd35:Abilities>
+        <dd35:NaturalAttacks />
+        <dd35:AttackOptions>
+          <dd35:Attack>
+            <dd35:Item>
+              <dd35:Primary>
+                <dd35:AO w="t" c="1" />
+              </dd35:Primary>
+            </dd35:Item>
+          </dd35:Attack>
+          <dd35:Full>
+            <dd35:Item>
+              <dd35:Primary>
+                <dd35:AO w="t" c="1" />
+              </dd35:Primary>
+            </dd35:Item>
+          </dd35:Full>
+        </dd35:AttackOptions>
+        <dd35:LevelInfos>
+          <dd35:LevelInfo level="1" classLevel="1" type="cl" className="Fighter" hp="9" hd="10" />
+        </dd35:LevelInfos>
+        <dd35:Languages>
+          <dd35:Language name="Common" u="t" s="t" c="0" />
+        </dd35:Languages>
+        <dd35:Morphology v="1">
+          <dd35:BodyParts heads="1" arms="2" legs="2" hands="2" claws="0" wings="0" tails="0" fins="0" tentacles="0" eyes="2" mouths="1" horns="0" tusks="0" antennae="0" beaks="0" stalks="0" stingers="0" />
+          <dd35:Wielding ph="1" oh="1" />
+        </dd35:Morphology>
+        <dd35:ActiveState>
+          <dd35:AM />
+        </dd35:ActiveState>
+        <dd35:Description />
+        <dd35:Gear nID="0" gb="" gic="t" es="">
+          <dd35:Item v="3" id="84" name="Chain Shirt" type="armor" size="m" c="1" e="t">
+            <dd35:Armor />
+          </dd35:Item>
+          <dd35:Item v="3" id="85" name="Light Steel Shield" type="armor" size="m" c="1">
+            <dd35:Armor />
+          </dd35:Item>
+          <dd35:Item v="3" id="86" name="Longsword" type="weapon" size="m" c="1">
+            <dd35:Weapon />
+          </dd35:Item>
+        </dd35:Gear>
+        <dd35:CombatInfo />
+      </dd35:Stats>
+      <dd35:History created="63603746984" />
+    </dd35:NPC>
+    <dd35:NPC name="Tiara" v="9" type="Humanoid" subtype="Human" npcGroup="Orlane/01 Village/10. Mayor's Residence">
+      <dd35:Stats race="Human" gender="f" alignment="lg" deity="" age="15" weight="150" height="60" eyes="" hair="" skin="" xp="0" group="" cr="1" size="m" hd="0" hitDie="8" levelAdj="0">
+        <dd35:Attributes s="8" d="9" c="7" i="14" w="17" ch="8" />
+        <dd35:Saves />
+        <dd35:AC />
+        <dd35:Movement>
+          <dd35:Move name="Walk" at="ex" ls="30" ms="20" hs="20" />
+        </dd35:Movement>
+        <dd35:Senses />
+        <dd35:Skills>
+          <dd35:Skill name="Craft" subskill="pottery" ranks="4" />
+          <dd35:Skill name="Knowledge" subskill="local" ranks="2" />
+          <dd35:Skill name="Listen" ranks="4" />
+          <dd35:Skill name="Spot" ranks="4" />
+          <dd35:Skill name="Survival" ranks="2" />
+        </dd35:Skills>
+        <dd35:Feats>
+          <dd35:Feat name="Self-Sufficient" st="4" />
+        </dd35:Feats>
+        <dd35:Classes>
+          <dd35:Class type="ra" name="Racial" level="0">
+            <dd35:Stats>
+              <dd35:AbilityChoices>
+                <dd35:Choice id="0" a="bonusFeat" at="2" cid="0" l="0" c="Self-Sufficient" />
+              </dd35:AbilityChoices>
+            </dd35:Stats>
+          </dd35:Class>
+          <dd35:Class type="cl" name="Commoner" level="1">
+            <dd35:Stats>
+              <dd35:AbilityChoices />
+            </dd35:Stats>
+          </dd35:Class>
+        </dd35:Classes>
+        <dd35:Abilities>
+          <dd35:Ability id="0" st="2">
+            <dd35:Info id="0" type="bonusFeat" at="ex" info1="sf" info2="Self-Sufficient" />
+          </dd35:Ability>
+        </dd35:Abilities>
+        <dd35:NaturalAttacks />
+        <dd35:AttackOptions>
+          <dd35:Attack>
+            <dd35:Item>
+              <dd35:Primary>
+                <dd35:AO w="t" c="1" />
+              </dd35:Primary>
+            </dd35:Item>
+          </dd35:Attack>
+          <dd35:Full>
+            <dd35:Item>
+              <dd35:Primary>
+                <dd35:AO w="t" c="1" />
+              </dd35:Primary>
+            </dd35:Item>
+          </dd35:Full>
+        </dd35:AttackOptions>
+        <dd35:LevelInfos>
+          <dd35:LevelInfo level="1" classLevel="1" type="cl" className="Commoner" hp="3" hd="4" />
+        </dd35:LevelInfos>
+        <dd35:Languages>
+          <dd35:Language name="Common" u="t" s="t" c="0" />
+        </dd35:Languages>
+        <dd35:Morphology v="1">
+          <dd35:BodyParts heads="1" arms="2" legs="2" hands="2" claws="0" wings="0" tails="0" fins="0" tentacles="0" eyes="2" mouths="1" horns="0" tusks="0" antennae="0" beaks="0" stalks="0" stingers="0" />
+          <dd35:Wielding ph="1" oh="1" />
+        </dd35:Morphology>
+        <dd35:ActiveState>
+          <dd35:AM />
+        </dd35:ActiveState>
+        <dd35:Description>Jüngere der beiden Töchter Zakarias'</dd35:Description>
+        <dd35:CombatInfo />
+      </dd35:Stats>
+      <dd35:History created="63603769302" />
+    </dd35:NPC>
+    <dd35:NPC name="Traver Stoutheart" v="9" type="Humanoid" subtype="Human" npcGroup="Orlane/01 Village/10. Mayor's Residence">
+      <dd35:Stats race="Human" gender="m" alignment="cg" deity="" age="48" weight="150" height="60" eyes="" hair="" skin="" xp="10298" group="" cr="5" size="m" hd="0" hitDie="8" levelAdj="0">
+        <dd35:Attributes s="15" d="11" c="17" i="7" w="9" ch="9" />
+        <dd35:Saves />
+        <dd35:AC />
+        <dd35:Movement>
+          <dd35:Move name="Walk" at="ex" ls="30" ms="20" hs="20" />
+        </dd35:Movement>
+        <dd35:Senses />
+        <dd35:Skills>
+          <dd35:Skill name="Ride" ranks="4" />
+          <dd35:Skill name="Swim" ranks="4" />
+        </dd35:Skills>
+        <dd35:Feats>
+          <dd35:Feat name="Alertness" st="4" />
+          <dd35:Feat name="Armor Proficiency (Heavy)" st="2" cl="1" cName="Fighter" />
+          <dd35:Feat name="Armor Proficiency (Light)" st="2" cl="1" cName="Fighter" />
+          <dd35:Feat name="Armor Proficiency (Medium)" st="2" cl="1" cName="Fighter" />
+          <dd35:Feat name="Improved Bull Rush" st="2" cl="4" cName="Fighter" />
+          <dd35:Feat name="Martial Weapon Proficiency" st="2" cl="1" cName="Fighter" />
+          <dd35:Feat name="Power Attack" st="2" cl="2" cName="Fighter" />
+          <dd35:Feat name="Shield Proficiency" st="2" cl="1" cName="Fighter" />
+          <dd35:Feat name="Simple Weapon Proficiency" st="2" cl="1" cName="Fighter" />
+          <dd35:Feat name="Tower Shield Proficiency" st="2" cl="1" cName="Fighter" />
+          <dd35:Feat name="Weapon Focus" appliesTo="Longsword" st="2" cl="1" cName="Fighter" />
+        </dd35:Feats>
+        <dd35:Classes>
+          <dd35:Class type="ra" name="Racial" level="0">
+            <dd35:Stats>
+              <dd35:AbilityChoices>
+                <dd35:Choice id="0" a="bonusFeat" at="2" cid="0" l="0" c="Alertness" />
+              </dd35:AbilityChoices>
+            </dd35:Stats>
+          </dd35:Class>
+          <dd35:Class type="cl" name="Fighter" level="5">
+            <dd35:Stats>
+              <dd35:AbilityChoices>
+                <dd35:Choice id="0" a="bonusFeat" at="4" cid="0" l="1" c="Weapon Focus" s1="Longsword" />
+                <dd35:Choice id="1" a="bonusFeat" at="4" cid="0" l="2" c="Power Attack" />
+                <dd35:Choice id="2" a="bonusFeat" at="4" cid="0" l="4" c="Improved Bull Rush" />
+              </dd35:AbilityChoices>
+            </dd35:Stats>
+          </dd35:Class>
+        </dd35:Classes>
+        <dd35:Abilities>
+          <dd35:Ability id="0" st="2">
+            <dd35:Info id="0" type="bonusFeat" at="ex" info1="sf" info2="Alertness" />
+          </dd35:Ability>
+          <dd35:Ability id="0" st="4" cl="1" icli="t" cName="Fighter">
+            <dd35:Info id="0" type="bonusFeat" at="ex" info1="sf" info2="Weapon Focus" info3="Longsword" />
+          </dd35:Ability>
+          <dd35:Ability id="1" st="4" cl="2" icli="t" cName="Fighter">
+            <dd35:Info id="0" type="bonusFeat" at="ex" info1="sf" info2="Power Attack" />
+          </dd35:Ability>
+          <dd35:Ability id="2" st="4" cl="4" icli="t" cName="Fighter">
+            <dd35:Info id="0" type="bonusFeat" at="ex" info1="sf" info2="Improved Bull Rush" />
+          </dd35:Ability>
+        </dd35:Abilities>
+        <dd35:NaturalAttacks />
+        <dd35:AttackOptions>
+          <dd35:Attack>
+            <dd35:Item>
+              <dd35:Primary>
+                <dd35:AO w="t" c="1" />
+              </dd35:Primary>
+            </dd35:Item>
+          </dd35:Attack>
+          <dd35:Full>
+            <dd35:Item>
+              <dd35:Primary>
+                <dd35:AO w="t" c="1" />
+              </dd35:Primary>
+            </dd35:Item>
+          </dd35:Full>
+        </dd35:AttackOptions>
+        <dd35:LevelInfos>
+          <dd35:LevelInfo level="1" classLevel="1" type="cl" className="Fighter" hp="2" hd="10" />
+          <dd35:LevelInfo level="2" classLevel="2" type="cl" className="Fighter" hp="6" hd="10" />
+          <dd35:LevelInfo level="3" classLevel="3" type="cl" className="Fighter" hp="3" hd="10" />
+          <dd35:LevelInfo level="4" classLevel="4" type="cl" className="Fighter" hp="4" hd="10" />
+          <dd35:LevelInfo level="5" classLevel="5" type="cl" className="Fighter" hp="10" hd="10" />
+        </dd35:LevelInfos>
+        <dd35:Languages>
+          <dd35:Language name="Common" u="t" s="t" c="0" />
+        </dd35:Languages>
+        <dd35:Morphology v="1">
+          <dd35:BodyParts heads="1" arms="2" legs="2" hands="2" claws="0" wings="0" tails="0" fins="0" tentacles="0" eyes="2" mouths="1" horns="0" tusks="0" antennae="0" beaks="0" stalks="0" stingers="0" />
+          <dd35:Wielding ph="1" oh="1" />
+        </dd35:Morphology>
+        <dd35:ActiveState>
+          <dd35:AM t="0" />
+          <dd35:Active />
+          <dd35:Damage>
+            <dd35:Info name="Hit Point Damage" am="16" tp="3095891190" />
+          </dd35:Damage>
+        </dd35:ActiveState>
+        <dd35:Gear nID="0" gb="it" gic="t" es="">
+          <dd35:Item v="3" id="83" name="Longsword" type="weapon" size="m" c="1" e="t" magic="t">
+            <dd35:Weapon b="2" />
+          </dd35:Item>
+          <dd35:Item v="3" id="81" name="Banded Mail" type="armor" size="m" c="1" e="t">
+            <dd35:Armor />
+          </dd35:Item>
+          <dd35:Item v="3" id="82" name="Light Steel Shield" type="armor" size="m" c="1" eoh="t">
+            <dd35:Armor />
+          </dd35:Item>
+        </dd35:Gear>
+        <dd35:CombatInfo />
+      </dd35:Stats>
+      <dd35:History created="63603746267" />
+    </dd35:NPC>
+    <dd35:NPC name="Zakarias Ormond" v="9" type="Humanoid" subtype="Human" npcGroup="Orlane/01 Village/10. Mayor's Residence">
+      <dd35:Stats race="Human" gender="m" alignment="le" deity="" age="45" weight="150" height="60" eyes="" hair="" skin="" xp="3365" group="" cr="3" size="m" hd="0" hitDie="8" levelAdj="0">
+        <dd35:Attributes s="16" d="10" c="12" i="14" w="15" ch="14" />
+        <dd35:Saves />
+        <dd35:AC />
+        <dd35:Movement>
+          <dd35:Move name="Walk" at="ex" ls="30" ms="20" hs="20" />
+        </dd35:Movement>
+        <dd35:Senses />
+        <dd35:Skills>
+          <dd35:Skill name="Diplomacy" ranks="3" />
+          <dd35:Skill name="Handle Animal" ranks="6" />
+          <dd35:Skill name="Ride" ranks="6" />
+          <dd35:Skill name="Sense Motive" ranks="3" />
+        </dd35:Skills>
+        <dd35:Feats>
+          <dd35:Feat name="Alertness" st="4" />
+          <dd35:Feat name="Armor Proficiency (Heavy)" st="2" cl="1" cName="Fighter" />
+          <dd35:Feat name="Armor Proficiency (Light)" st="2" cl="1" cName="Fighter" />
+          <dd35:Feat name="Armor Proficiency (Medium)" st="2" cl="1" cName="Fighter" />
+          <dd35:Feat name="Improved Initiative" st="2" cl="2" cName="Fighter" />
+          <dd35:Feat name="Martial Weapon Proficiency" st="2" cl="1" cName="Fighter" />
+          <dd35:Feat name="Mounted Combat" st="2" cl="1" cName="Fighter" />
+          <dd35:Feat name="Shield Proficiency" st="2" cl="1" cName="Fighter" />
+          <dd35:Feat name="Simple Weapon Proficiency" st="2" cl="1" cName="Fighter" />
+          <dd35:Feat name="Tower Shield Proficiency" st="2" cl="1" cName="Fighter" />
+        </dd35:Feats>
+        <dd35:Classes>
+          <dd35:Class type="ra" name="Racial" level="0">
+            <dd35:Stats>
+              <dd35:AbilityChoices>
+                <dd35:Choice id="0" a="bonusFeat" at="2" cid="0" l="0" c="Alertness" />
+              </dd35:AbilityChoices>
+            </dd35:Stats>
+          </dd35:Class>
+          <dd35:Class type="cl" name="Fighter" level="3">
+            <dd35:Stats>
+              <dd35:AbilityChoices>
+                <dd35:Choice id="0" a="bonusFeat" at="4" cid="0" l="1" c="Mounted Combat" />
+                <dd35:Choice id="1" a="bonusFeat" at="4" cid="0" l="2" c="Improved Initiative" />
+              </dd35:AbilityChoices>
+            </dd35:Stats>
+          </dd35:Class>
+        </dd35:Classes>
+        <dd35:Abilities>
+          <dd35:Ability id="0" st="2">
+            <dd35:Info id="0" type="bonusFeat" at="ex" info1="sf" info2="Alertness" />
+          </dd35:Ability>
+          <dd35:Ability id="0" st="4" cl="1" icli="t" cName="Fighter">
+            <dd35:Info id="0" type="bonusFeat" at="ex" info1="sf" info2="Mounted Combat" />
+          </dd35:Ability>
+          <dd35:Ability id="1" st="4" cl="2" icli="t" cName="Fighter">
+            <dd35:Info id="0" type="bonusFeat" at="ex" info1="sf" info2="Improved Initiative" />
+          </dd35:Ability>
+        </dd35:Abilities>
+        <dd35:NaturalAttacks />
+        <dd35:AttackOptions>
+          <dd35:Attack>
+            <dd35:Item>
+              <dd35:Primary>
+                <dd35:AO w="t" c="1" />
+              </dd35:Primary>
+            </dd35:Item>
+          </dd35:Attack>
+          <dd35:Full>
+            <dd35:Item>
+              <dd35:Primary>
+                <dd35:AO w="t" c="1" />
+              </dd35:Primary>
+            </dd35:Item>
+          </dd35:Full>
+        </dd35:AttackOptions>
+        <dd35:LevelInfos>
+          <dd35:LevelInfo level="1" classLevel="1" type="cl" className="Fighter" hp="7" hd="10" />
+          <dd35:LevelInfo level="2" classLevel="2" type="cl" className="Fighter" hp="4" hd="10" />
+          <dd35:LevelInfo level="3" classLevel="3" type="cl" className="Fighter" hp="1" hd="10" />
+        </dd35:LevelInfos>
+        <dd35:Languages>
+          <dd35:Language name="Common" u="t" s="t" c="0" />
+        </dd35:Languages>
+        <dd35:Morphology v="1">
+          <dd35:BodyParts heads="1" arms="2" legs="2" hands="2" claws="0" wings="0" tails="0" fins="0" tentacles="0" eyes="2" mouths="1" horns="0" tusks="0" antennae="0" beaks="0" stalks="0" stingers="0" />
+          <dd35:Wielding ph="1" oh="1" />
+        </dd35:Morphology>
+        <dd35:ActiveState>
+          <dd35:AM t="0" />
+          <dd35:Active />
+        </dd35:ActiveState>
+        <dd35:Gear nID="0" gb="" gic="t" es="">
+          <dd35:Item v="3" id="79" name="Light Steel Shield" type="armor" size="m" c="1" magic="t" eoh="t">
+            <dd35:Armor b="1" />
+          </dd35:Item>
+          <dd35:Item v="3" id="80" name="Longsword" type="weapon" size="m" c="1" magic="t" e="t">
+            <dd35:Weapon b="1" />
+          </dd35:Item>
+          <dd35:Item v="3" id="78" name="Chainmail" type="armor" size="m" c="1" e="t">
+            <dd35:Armor />
+          </dd35:Item>
+        </dd35:Gear>
+        <dd35:CombatInfo />
+        <dd35:Description />
+      </dd35:Stats>
+      <dd35:History created="63603745681" />
+    </dd35:NPC>
+  </dd35:NPCs>
+</dd35:NPCExport>

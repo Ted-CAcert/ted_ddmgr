@@ -433,6 +433,32 @@ exports.getCampaignList = async function(PersonID) {
   return res;
 }
 
+exports.findCharacter = async function(uuid, PersonID) {
+  let conn;
+  let res;
+  let query;
+  try {
+    conn = await InitPool.getConnection();
+
+    let query = "SELECT NPCID FROM NPC WHERE CharUID=? AND CreatorID=?";
+
+    let DBres = await conn.query(query, [ uuid, PersonID ]);
+    if (DBres.length > 0) {
+      res = DBRes[0];
+    } else {
+      res = null;
+    }
+  } catch(error) {
+    console.log("error in findCharacter");
+    console.log(debugLine(error));
+    throw error;
+  } finally {
+    if (conn) conn.release();
+  }
+
+  return res;
+}
+
 /* Saves record data into a database table.
   If the primary key value is null, a new record is inserted, otherwise update is used.
 

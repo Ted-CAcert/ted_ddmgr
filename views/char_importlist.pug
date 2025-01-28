@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  h1= title
+
+  form(method='POST' action='/chars/import')
+    if CharList.length
+      each Char, idx in CharList
+        input(type='checkbox' id=idx value=idx name="CharIdx") 
+        label(for=idx) #{Char.Name} #{Char.Type}
+        br
+    button.btn.btn-primary(type='submit') Import
+  if Msg 
+    p #{Msg}
+  a(href="/chars") Back

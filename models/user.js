@@ -11,6 +11,7 @@ function NewSession(PersonOrSessionID) {
     this.SessionID = null;
     this.loadPromise = null;
     this.theRec = null;
+    this.SessionStatus = {};
     this.stringList = {
         PersonName: null,
         CurCampaign: "",
@@ -46,6 +47,9 @@ function NewSession(PersonOrSessionID) {
         this.PersonID = this.theRec.PersonID;
         this.loadPromise = this.loadStringList().then(() => {
             SessionCache.set(this.SessionID, { "Rec": this.theRec, "stringList": this.stringList });
+            if (this.theRec.SessionStatus) {
+                this.SessionStatus = JSON.parse(this.theRec.SessionStatus);
+            }
         });
         return this.loadPromise;
     }
@@ -68,6 +72,11 @@ function NewSession(PersonOrSessionID) {
         // additionally update CurCampaignID of the Person record
         DB.saveRecord({PersonID: this.PersonID, CurCampaignID: campaignID }, "Person", "PersonID", {});
         this.loadStringList();
+    }
+
+    this.Modified = function() {
+        this.theRec.SessionStatus = JSON.stringify(this.SessionStatus);
+        this.save();
     }
 
     if (typeof(PersonOrSessionID) == 'bigint' || typeof(PersonOrSessionID) == 'number') {

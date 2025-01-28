@@ -1,0 +1,378 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dd35:PCExport xmlns="http://www.adamczak.com/Andy" xmlns:dd35="http://www.adamczak.com/Andy/D&amp;D">
+  <dd35:Info />
+  <dd35:PCs>
+    <dd35:PC name="Ainyll Danil" playerName="Emilia" v="9" type="Humanoid" subtype="Dwarf">
+      <dd35:Stats race="Dwarf" gender="f" alignment="ln" deity="" age="18" weight="104" height="40" eyes="" hair="" skin="" xp="11612" size="m" hd="0" hitDie="8" levelAdj="0">
+        <dd35:Attributes s="9" d="16" c="15" i="15" w="13" ch="16" />
+        <dd35:Saves />
+        <dd35:AC />
+        <dd35:Movement>
+          <dd35:Move name="Walk" at="ex" ls="20" ms="20" hs="20" />
+        </dd35:Movement>
+        <dd35:Skills>
+          <dd35:Skill name="Bluff" ranks="4" />
+          <dd35:Skill name="Concentration" ranks="4" />
+          <dd35:Skill name="Craft" subskill="blacksmithing" ranks="3" />
+          <dd35:Skill name="Diplomacy" ranks="2" />
+          <dd35:Skill name="Heal" ranks="1" />
+          <dd35:Skill name="Knowledge" subskill="arcana" ranks="2" />
+          <dd35:Skill name="Profession" subskill="miner" ranks="1" />
+          <dd35:Skill name="Spellcraft" ranks="4" />
+        </dd35:Skills>
+        <dd35:Feats>
+          <dd35:Feat name="Brew Potion" />
+          <dd35:Feat name="Iron Will" />
+          <dd35:Feat name="Simple Weapon Proficiency" st="2" cl="1" cName="Sorcerer" />
+        </dd35:Feats>
+        <dd35:Classes>
+          <dd35:Class type="ra" name="Racial" level="0" r="t">
+            <dd35:Stats>
+              <dd35:AbilityChoices />
+            </dd35:Stats>
+          </dd35:Class>
+          <dd35:Class type="cl" name="Sorcerer" level="4">
+            <dd35:Stats>
+              <dd35:AbilityChoices />
+              <dd35:KnownSpells>
+                <dd35:Level level="0">
+                  <dd35:Spell name="Detect Magic" />
+                  <dd35:Spell name="Detect Poison" />
+                  <dd35:Spell name="Disrupt Undead" />
+                  <dd35:Spell name="Ghost Sound" />
+                  <dd35:Spell name="Light" />
+                  <dd35:Spell name="Open/Close" />
+                </dd35:Level>
+                <dd35:Level level="1">
+                  <dd35:Spell name="Charm Person" />
+                  <dd35:Spell name="Feather Fall" />
+                  <dd35:Spell name="Sleep" />
+                </dd35:Level>
+                <dd35:Level level="2">
+                  <dd35:Spell name="Invisibility" />
+                </dd35:Level>
+              </dd35:KnownSpells>
+            </dd35:Stats>
+          </dd35:Class>
+        </dd35:Classes>
+        <dd35:Abilities nID="1">
+          <dd35:Ability id="32" st="2">
+            <dd35:Info id="0" type="special" at="ex" bt="ra" info1="Resistance to Poison">
+              <dd35:Effects override="t">
+                <dd35:Items>
+                  <dd35:Item effect="resistance" i1="po" v="+2" bt="ra" />
+                </dd35:Items>
+                <dd35:Groups />
+              </dd35:Effects>
+            </dd35:Info>
+          </dd35:Ability>
+          <dd35:Ability id="34" st="2">
+            <dd35:Info id="0" type="special" at="ex" bt="ra" info1="Resistance to Spells">
+              <dd35:Effects override="t">
+                <dd35:Items>
+                  <dd35:Item effect="resistance" i1="sp" v="+2" bt="ra" />
+                </dd35:Items>
+                <dd35:Groups />
+              </dd35:Effects>
+            </dd35:Info>
+          </dd35:Ability>
+          <dd35:Ability id="29" st="2">
+            <dd35:Info id="0" type="special" at="ex" info1="AC Bonus">
+              <dd35:Effects override="t">
+                <dd35:Items>
+                  <dd35:Item id="1" effect="ac" i2="cty" i3="Giant" v="+4" bt="do" />
+                </dd35:Items>
+                <dd35:Groups />
+              </dd35:Effects>
+            </dd35:Info>
+          </dd35:Ability>
+          <dd35:Ability id="30" st="2">
+            <dd35:Info id="0" type="special" at="ex" info1="Attack Bonus">
+              <dd35:Effects override="t">
+                <dd35:Items>
+                  <dd35:Item id="0" effect="attackMod" i1="rac" i2="Orc" v="+1" bt="ra" />
+                  <dd35:Item id="1" effect="attackMod" i1="rac" i2="Half-Orc" v="+1" bt="ra" />
+                  <dd35:Item id="2" effect="attackMod" i1="cty" i3="Goblinoid" v="+1" bt="ra" />
+                </dd35:Items>
+                <dd35:Groups />
+              </dd35:Effects>
+            </dd35:Info>
+          </dd35:Ability>
+          <dd35:Ability id="0">
+            <dd35:Info id="0" type="skill" at="ex" bt="en" info1="Listen" val1="+3" desc="from bat familiars" />
+          </dd35:Ability>
+          <dd35:Ability id="22" st="2">
+            <dd35:Info id="0" type="skill" at="ex" bt="ra" info1="Appraise" val1="+2" desc="stone or metal items" />
+          </dd35:Ability>
+          <dd35:Ability id="23" st="2">
+            <dd35:Info id="0" type="skill" at="ex" bt="ra" info1="Craft" val1="+2" desc="stone or metal items" />
+          </dd35:Ability>
+          <dd35:Ability id="2" st="4" cl="1" icli="t" cName="Sorcerer">
+            <dd35:Info id="0" type="special" at="ex" info1="Familiar" />
+          </dd35:Ability>
+          <dd35:Ability id="0" st="4" cl="1" icli="t" cName="Sorcerer">
+            <dd35:Info id="0" type="special" at="ex" info1="Summon Familiar" />
+          </dd35:Ability>
+          <dd35:Ability id="10" st="2">
+            <dd35:Info id="0" type="special" at="ex" info1="Stability" />
+          </dd35:Ability>
+          <dd35:Ability id="11" st="2">
+            <dd35:Info id="0" type="special" at="ex" info1="Stonecunning" />
+          </dd35:Ability>
+          <dd35:Ability id="13" st="2">
+            <dd35:Info id="0" type="weaponFamiliarity" at="ex" info1="Urgrosh, Dwarven" info2="martial" />
+          </dd35:Ability>
+          <dd35:Ability id="14" st="2">
+            <dd35:Info id="0" type="weaponFamiliarity" at="ex" info1="Waraxe, Dwarven" info2="martial" />
+          </dd35:Ability>
+        </dd35:Abilities>
+        <dd35:NaturalAttacks />
+        <dd35:AttackOptions>
+          <dd35:Attack>
+            <dd35:Item>
+              <dd35:Primary>
+                <dd35:AO w="t" c="1" />
+              </dd35:Primary>
+            </dd35:Item>
+          </dd35:Attack>
+          <dd35:Full>
+            <dd35:Item>
+              <dd35:Primary>
+                <dd35:AO w="t" c="1" />
+              </dd35:Primary>
+            </dd35:Item>
+          </dd35:Full>
+        </dd35:AttackOptions>
+        <dd35:LevelInfos>
+          <dd35:LevelInfo level="1" classLevel="1" type="cl" className="Sorcerer" hp="4" hd="4" />
+          <dd35:LevelInfo level="2" classLevel="2" type="cl" className="Sorcerer" hp="4" hd="4" />
+          <dd35:LevelInfo level="3" classLevel="3" type="cl" className="Sorcerer" hp="2" hd="4" />
+          <dd35:LevelInfo level="4" classLevel="4" type="cl" className="Sorcerer" hp="4" hd="4" />
+        </dd35:LevelInfos>
+        <dd35:Languages>
+          <dd35:Language name="Common" u="t" s="t" c="0" />
+          <dd35:Language name="Dwarven" u="t" s="t" c="0" />
+        </dd35:Languages>
+        <dd35:Morphology v="1">
+          <dd35:BodyParts heads="1" arms="2" legs="2" hands="2" claws="0" wings="0" tails="0" fins="0" tentacles="0" eyes="2" mouths="1" horns="0" tusks="0" antennae="0" beaks="0" stalks="0" stingers="0" />
+          <dd35:Wielding ph="1" oh="1" />
+        </dd35:Morphology>
+        <dd35:ActiveState>
+          <dd35:AM t="0" st="3096411458" raD="Shoot" />
+          <dd35:Active />
+          <dd35:UsedDailySpellSlots>
+            <dd35:Info l1="1" l2="3" class="Sorcerer" />
+          </dd35:UsedDailySpellSlots>
+          <dd35:Damage>
+            <dd35:Info name="Hit Point Damage" am="14" tp="3096436164" />
+          </dd35:Damage>
+          <dd35:ActiveEffects>
+            <dd35:Info id="69" t="sp" st="3096436794" fn="Charm Person" fc="Sorcerer" a="t" oe="t" iem="t" clml="4" spsl="1" efdc="14" efasr="t" acsrc="17" acsrb="4" acedc="14">
+              <dd35:Duration t="ti" dv="CastLv" du="600" edu="4" edur="2400" />
+              <dd35:Save a="t" t="will" sru="ne" />
+              <dd35:AE>
+                <dd35:Items />
+                <dd35:Groups />
+              </dd35:AE>
+              <dd35:IE>
+                <dd35:Items />
+                <dd35:Groups />
+              </dd35:IE>
+            </dd35:Info>
+          </dd35:ActiveEffects>
+        </dd35:ActiveState>
+        <dd35:Gear nID="924" gb="" gic="t" es="">
+          <dd35:Item v="3" id="170" name="Bolt" type="ammo" size="m" c="36">
+            <dd35:Ammo />
+          </dd35:Item>
+          <dd35:Item v="3" id="923" name="Dart" type="weapon" size="m" c="2" e="t">
+            <dd35:Weapon />
+          </dd35:Item>
+          <dd35:Item v="3" id="1160" name="Leather" type="armor" size="m" c="1">
+            <dd35:Armor />
+          </dd35:Item>
+          <dd35:Item v="3" id="168" name="Light Crossbow" type="weapon" size="m" c="1">
+            <dd35:Weapon />
+          </dd35:Item>
+          <dd35:Item v="3" id="135" name="Ring of Protection +1" type="clothing" c="1" e="t" magic="t" />
+        </dd35:Gear>
+        <dd35:CombatInfo />
+        <dd35:Description>In Tieren der afrikanischen Savanne</dd35:Description>
+      </dd35:Stats>
+      <dd35:History created="63663541606" />
+    </dd35:PC>
+    <dd35:PC name="Bratsch" playerName="Basti" v="9" type="Humanoid" subtype="Orc">
+      <dd35:Stats race="Half-Orc" gender="m" alignment="cg" deity="" age="18" weight="260" height="82" eyes="" hair="" skin="" xp="23289" size="m" hd="0" hitDie="8" levelAdj="0">
+        <dd35:Attributes s="18" d="15" c="14" i="10" w="10" ch="10" />
+        <dd35:Saves />
+        <dd35:AC />
+        <dd35:Movement>
+          <dd35:Move name="Walk" at="ex" ls="30" ms="20" hs="20" />
+        </dd35:Movement>
+        <dd35:Skills>
+          <dd35:Skill name="Craft" subskill="blacksmithing" ranks="4" />
+          <dd35:Skill name="Craft" subskill="blacksmithing" ranks="4" />
+          <dd35:Skill name="Escape Artist" ranks="3" />
+          <dd35:Skill name="Handle Animal" ranks="2" />
+          <dd35:Skill name="Heal" ranks="4" />
+          <dd35:Skill name="Intimidate" ranks="3" />
+          <dd35:Skill name="Listen" ranks="2" />
+          <dd35:Skill name="Search" ranks="3" />
+          <dd35:Skill name="Spot" ranks="4" />
+          <dd35:Skill name="Survival" ranks="2" />
+        </dd35:Skills>
+        <dd35:Feats>
+          <dd35:Feat name="Armor Proficiency (Light)" st="2" cl="1" cName="Barbarian" />
+          <dd35:Feat name="Armor Proficiency (Medium)" st="2" cl="1" cName="Barbarian" />
+          <dd35:Feat name="Cleave" />
+          <dd35:Feat name="Improved Unarmed Strike" />
+          <dd35:Feat name="Martial Weapon Proficiency" st="2" cl="1" cName="Barbarian" />
+          <dd35:Feat name="Power Attack" />
+          <dd35:Feat name="Shield Proficiency" st="2" cl="1" cName="Barbarian" />
+          <dd35:Feat name="Simple Weapon Proficiency" st="2" cl="1" cName="Barbarian" />
+        </dd35:Feats>
+        <dd35:Classes>
+          <dd35:Class type="ra" name="Racial" level="0" r="t">
+            <dd35:Stats>
+              <dd35:AbilityChoices />
+            </dd35:Stats>
+          </dd35:Class>
+          <dd35:Class type="cl" name="Barbarian" level="6">
+            <dd35:Stats>
+              <dd35:AbilityChoices />
+            </dd35:Stats>
+          </dd35:Class>
+        </dd35:Classes>
+        <dd35:Abilities nID="0">
+          <dd35:Ability id="20" st="4" cl="1" icli="t" cName="Barbarian">
+            <dd35:Info id="0" type="special" at="ex" sc="ma;me" info1="Fast Movement">
+              <dd35:Effects override="t">
+                <dd35:Items>
+                  <dd35:Item id="0" effect="movement" i1="sp" i2="Walk" v="+10" bt="un" />
+                </dd35:Items>
+                <dd35:Groups />
+              </dd35:Effects>
+            </dd35:Info>
+          </dd35:Ability>
+          <dd35:Ability id="1" st="4" cl="1" icli="t" cName="Barbarian">
+            <dd35:Info id="0" type="special" at="ex" info1="Illiteracy" />
+          </dd35:Ability>
+          <dd35:Ability id="34" st="4" cl="1" icli="t" cName="Barbarian">
+            <dd35:Info id="0" type="special" at="ex" info1="Rage">
+              <dd35:Activation override="t" activated="t" at="fea" ft="tpy" fv="1 + Floor(CuClLv / 4)" fu="14400" dt="ti" dv="Max(1, 3 + ConMod)" du="1" />
+            </dd35:Info>
+          </dd35:Ability>
+          <dd35:Ability id="3" st="4" cl="2" icli="t" cName="Barbarian">
+            <dd35:Info id="0" type="special" at="ex" info1="Uncanny Dodge" />
+          </dd35:Ability>
+          <dd35:Ability id="36" st="4" cl="3" icli="t" cName="Barbarian">
+            <dd35:Info id="0" type="special" at="ex" info1="Trap Sense">
+              <dd35:Effects override="t">
+                <dd35:Items>
+                  <dd35:Item id="0" effect="ac" v="+ Floor(CuClLv / 3)" bt="do" act="t" desc="against attacks made by traps" />
+                  <dd35:Item id="1" effect="save" i1="ref" v="+ Floor(CuClLv / 3)" bt="un" act="t" desc="to avoid traps" />
+                </dd35:Items>
+                <dd35:Groups />
+              </dd35:Effects>
+            </dd35:Info>
+          </dd35:Ability>
+          <dd35:Ability id="5" st="4" cl="5" icli="t" cName="Barbarian">
+            <dd35:Info id="0" type="special" at="ex" info1="Improved Uncanny Dodge" />
+          </dd35:Ability>
+        </dd35:Abilities>
+        <dd35:NaturalAttacks />
+        <dd35:AttackOptions>
+          <dd35:Attack>
+            <dd35:Item>
+              <dd35:Primary>
+                <dd35:AO w="t" c="1" />
+              </dd35:Primary>
+            </dd35:Item>
+          </dd35:Attack>
+          <dd35:Full>
+            <dd35:Item>
+              <dd35:Primary>
+                <dd35:AO w="t" c="1" />
+              </dd35:Primary>
+            </dd35:Item>
+          </dd35:Full>
+        </dd35:AttackOptions>
+        <dd35:LevelInfos>
+          <dd35:LevelInfo level="1" classLevel="1" type="cl" className="Barbarian" hp="12" hd="12" />
+          <dd35:LevelInfo level="2" classLevel="2" type="cl" className="Barbarian" hp="6" hd="12" />
+          <dd35:LevelInfo level="3" classLevel="3" type="cl" className="Barbarian" hp="6" hd="12" />
+          <dd35:LevelInfo level="4" classLevel="4" type="cl" className="Barbarian" hp="9" hd="12" />
+          <dd35:LevelInfo level="5" classLevel="5" type="cl" className="Barbarian" hp="7" hd="12" />
+          <dd35:LevelInfo level="6" classLevel="6" type="cl" className="Barbarian" hp="6" hd="12" />
+        </dd35:LevelInfos>
+        <dd35:Languages>
+          <dd35:Language name="Common" u="t" s="t" c="0" />
+          <dd35:Language name="Orc" u="t" s="t" c="0" />
+        </dd35:Languages>
+        <dd35:Morphology v="1">
+          <dd35:BodyParts heads="1" arms="2" legs="2" hands="2" claws="0" wings="0" tails="0" fins="0" tentacles="0" eyes="2" mouths="1" horns="0" tusks="0" antennae="0" beaks="0" stalks="0" stingers="0" />
+          <dd35:Wielding ph="1" oh="1" />
+        </dd35:Morphology>
+        <dd35:ActiveState>
+          <dd35:AM t="0" raD="Zuhauen" />
+          <dd35:Active>
+            <dd35:Info id="1" t="a" ft="cl" fc="Barbarian" fl="1" fi="34" fsi="0" fi1="Rage" />
+          </dd35:Active>
+          <dd35:Damage>
+            <dd35:Info name="Hit Point Damage" am="40" tp="3096436164" />
+          </dd35:Damage>
+          <dd35:ActiveEffects>
+            <dd35:Info id="70" t="sp" st="3096436794" fn="Charm Person" fc="Sorcerer" a="t" eid="69" ecn="Ainyll Danil" clml="4" spsl="1" efdc="14" efasr="t" acsrc="17" acsrb="4" acedc="14">
+              <dd35:Duration t="ti" dv="CastLv" du="600" edu="4" edur="2400" />
+              <dd35:Save a="t" t="will" sru="ne" />
+              <dd35:AE>
+                <dd35:Items />
+                <dd35:Groups />
+              </dd35:AE>
+              <dd35:IE>
+                <dd35:Items />
+                <dd35:Groups />
+              </dd35:IE>
+            </dd35:Info>
+          </dd35:ActiveEffects>
+        </dd35:ActiveState>
+        <dd35:Description />
+        <dd35:Senses>
+          <dd35:Sense name="Darkvision" r="60" at="ex" />
+        </dd35:Senses>
+        <dd35:Gear nID="655" gb="" gic="t" es="">
+          <dd35:Item v="3" id="0" name="Chainmail" type="armor" size="m" c="1" magic="t">
+            <dd35:Armor b="2" />
+          </dd35:Item>
+          <dd35:Item v="3" id="265" name="Bracers of Armor +1" type="clothing" c="1" e="t" magic="t" />
+          <dd35:Item v="3" id="165" name="Dagger" type="weapon" size="m" c="1">
+            <dd35:Weapon />
+          </dd35:Item>
+          <dd35:Item v="3" id="266" name="Goldenes Schlangensymbol an langer Lederschnur" type="jewelryArt" size="m">
+            <dd35:JewelryArt w="0,10" v="50" e="t" />
+          </dd35:Item>
+          <dd35:Item v="3" id="164" name="Greataxe" type="weapon" size="m" c="1" e="t" eoh="t">
+            <dd35:Weapon />
+          </dd35:Item>
+          <dd35:Item v="3" id="652" name="Heavy Steel Shield" type="armor" size="m" c="1">
+            <dd35:Armor />
+          </dd35:Item>
+          <dd35:Item v="3" id="294" name="Javelin" type="weapon" size="m" c="1">
+            <dd35:Weapon />
+          </dd35:Item>
+          <dd35:Item v="3" id="48" name="Light Mace" type="weapon" size="m" c="1">
+            <dd35:Weapon />
+          </dd35:Item>
+          <dd35:Item v="3" id="140" name="Nunchaku" type="weapon" size="m" c="1">
+            <dd35:Weapon />
+          </dd35:Item>
+          <dd35:Item v="3" id="263" name="Potion of" type="potion" nc="t" c="1" magic="t">
+            <dd35:Potion s="Cure Light Wounds" cl="5" />
+          </dd35:Item>
+        </dd35:Gear>
+        <dd35:CombatInfo />
+      </dd35:Stats>
+      <dd35:History created="63663467834" />
+    </dd35:PC>
+  </dd35:PCs>
+</dd35:PCExport>
