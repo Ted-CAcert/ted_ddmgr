@@ -459,6 +459,37 @@ exports.findCharacter = async function(uuid, PersonID) {
   return res;
 }
 
+exports.insertUpdateClass = async function (aClass) {
+
+  let conn;
+  let res;
+  let query;
+  let dataArray = [];
+
+  try {
+    conn = await InitPool.getConnection();
+
+    if (!aClass.ClassID) {
+      query = "SELECT ClassID FROM Classes WHERE ClassName = ? and Book = ?";
+      res = await conn.query(query, [ aClass.ClassName, aClass.Book ]);
+      if (res && res[0]) {
+        aClass.ClassID =res[0].ClassID;
+      }
+
+      res = exports.saveRecord(aClass, 'Classes', 'ClassID');
+    }
+
+  } catch(error) {
+    console.log("error in saveRecord");
+    console.log(debugLine(error));
+    throw error;
+  } finally {
+    if (conn) conn.release();
+  }
+
+  return res;
+}
+
 /* Saves record data into a database table.
   If the primary key value is null, a new record is inserted, otherwise update is used.
 
@@ -572,6 +603,27 @@ exports.readRecord = async function(recID, tableName, primaryKey, options) {
     res = await conn.query(query, dataArray);
   } catch(error) {
     console.log("error in readRecord");
+    console.log(debugLine(error));
+    throw error;
+  } finally {
+    if (conn) conn.release();
+  }
+  return res;
+}
+
+exports.FindEnum = async function(EnumType, EnumName) {
+  let conn;
+  let res;
+  let query;
+  let dataArray = [ EnumType, EnumName ];
+
+  try {
+    conn = await InitPool.getConnection();
+
+    query = "SELECT EnumID FROM Enums WHERE EnumType=? AND EnumName=?";
+    res = await conn.query(query, dataArray);
+  } catch(error) {
+    console.log("error in FindEnum");
     console.log(debugLine(error));
     throw error;
   } finally {

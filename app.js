@@ -15,6 +15,7 @@ const usersRouter = require('./routes/users');
 const loginRouter = require('./routes/login');
 const treeRouter = require('./routes/tree');
 const charRouter = require('./routes/chars');
+const basicdataRouter = require('./routes/basicdata');
 
 const app = express();
 
@@ -33,6 +34,7 @@ app.use('/users', usersRouter);
 app.use('/login', loginRouter);
 app.use('/node', treeRouter);
 app.use('/chars', charRouter);
+app.use('/basicdata', basicdataRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

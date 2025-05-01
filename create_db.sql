@@ -183,4 +183,35 @@ GRANT UPDATE ON ddmgr.NPC TO api@localhost;
 -- Current Version, should always be the last line of the script
 INSERT INTO DBVersion(VersionNum, VersionTS)
   SELECT 2, NOW() WHERE NOT EXISTS(SELECT 1 FROM DBVersion WHERE VersionNum=2);
-  
+
+CREATE OR REPLACE TABLE Enums (
+  EnumID INTEGER PRIMARY KEY AUTO_INCREMENT,
+  EnumType TEXT NOT NULL,
+  EnumName TEXT NOT NULL,
+  EnumValue TEXT NOT NULL
+);
+CREATE UNIQUE INDEX UX_Enums ON Enums(EnumType, EnumName);
+GRANT SELECT ON ddmgr.Enums TO api@localhost;
+GRANT INSERT ON ddmgr.Enums TO api@localhost;
+GRANT UPDATE ON ddmgr.Enums TO api@localhost;
+
+CREATE TABLE Classes (
+  ClassID INTEGER PRIMARY KEY AUTO_INCREMENT,
+  ClassName TEXT NOT NULL,
+  Book TINYTEXT NOT NULL,
+  ClassDesc LONGTEXT,
+  Page TINYTEXT,
+  v TINYTEXT, -- Function unclear
+  BaseAttackBonus TINYTEXT,
+  HitDie INTEGER,
+  LevelCount INTEGER,
+  SpellCaster TEXT,
+  FortSave TINYTEXT,
+  RefSave TINYTEXT,
+  WillSave TINYTEXT,
+  XMLData LONGTEXT
+);
+CREATE UNIQUE INDEX UX_Classes ON Classes(ClassName, Book);
+GRANT SELECT ON ddmgr.Classes TO api@localhost;
+GRANT INSERT ON ddmgr.Classes TO api@localhost;
+GRANT UPDATE ON ddmgr.Classes TO api@localhost;

@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  h1= title
+
+  form(method='POST' action='/basicdata/upload' enctype='multipart/form-data')
+    div.form-group
+      label(for='xmlfile') Upload XML File:
+      input#title.form-control(type='file', name='xmlfile')
+      button.btn.btn-primary(type='submit') Submit
+  
+  a(href="/") Back

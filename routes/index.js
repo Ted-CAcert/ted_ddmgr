@@ -3,6 +3,7 @@ const cookie = require('cookie');
 const router = express.Router();
 const UserModel = require("../models/user");
 const campaign_controller = require("../controllers/campaignController");
+const basicdata_controller = require("../controllers/basicdataController");
 
 /* GET home page. */
 router.get('/', async function(req, res, next) {
