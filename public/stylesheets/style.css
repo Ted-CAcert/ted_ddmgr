@@ -10,3 +10,7 @@ a {
 input[type="checkbox"] {
   margin-right: 0.5em;
 }
+
+table,thead,tbody,tr,td {
+  border: 1px solid;
+}

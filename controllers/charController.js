@@ -120,3 +120,12 @@ async function DoImport(npc, PersonID) {
     await theChar.save(PersonID);
     return Msg;
 }
+
+exports.getList = asyncHandler(async (req, res, next) => {
+    let TheSession = await UserModel.RequestSession(req, res);
+    if (TheSession) {
+        return await CharModel.getList(req.body.searchSpec, TheSession.PersonID);
+    } else {
+        throw("Cannot get session!");
+    } 
+});

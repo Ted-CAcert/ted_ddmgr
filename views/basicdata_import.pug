@@ -7,6 +7,11 @@ block content
     div.form-group
       label(for='xmlfile') Upload XML File:
       input#title.form-control(type='file', name='xmlfile')
+      label(for='comment') Comment:
+      input#comment.form-control(type='text', name='comment')
+      div
+       label(for='backup' display='inline-flex') Save permanently
+          input#backup.form-control(type='checkbox', name ='backup')
       button.btn.btn-primary(type='submit') Submit
   
   a(href="/") Back

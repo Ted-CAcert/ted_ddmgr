@@ -27,11 +27,16 @@ exports.Upload = asyncHandler(async (req, res, next) => {
 
             if (xml["dd35:Enums"]) {
                 await BasicdataModel.HandleEnumList(xml["dd35:Enums"]["dd35:Enum"]);
-            }
-            if (xml["dd35:AllClasses"]) {
+                Msg[0] = "Imported as enums";
+            } else if (xml["dd35:AllClasses"]) {
                 if (xml["dd35:AllClasses"]["dd35:Classes"]) {
                     await BasicdataModel.HandleClassesList("Standard", xml["dd35:AllClasses"]["dd35:Classes"][0]);
+                    Msg[0] = "Imported as character classes";
                 }
+            } else if (xmj("dd35:NPCExport")) {
+                
+            } else {
+                Msg[0] = "Unrecognized file format";
             }
 
             res.render('basicdata_uploadresult', {title: 'Basic Data Upload Result', Msg: Msg });

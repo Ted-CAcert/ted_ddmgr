@@ -111,3 +111,14 @@ CREATE UNIQUE INDEX UX_Classes ON Classes(ClassName, Book);
 GRANT SELECT ON ddmgr.Classes TO api@localhost;
 GRANT INSERT ON ddmgr.Classes TO api@localhost;
 GRANT UPDATE ON ddmgr.Classes TO api@localhost;
+
+CREATE TABLE DataFileUpload (
+  FileUploadID INTEGER PRIMARY KEY AUTO_INCREMENT,
+  UploadTS TIMESTAMP DEFAULT UTC_TIMESTAMP,
+  FileType TEXT,
+  Info TEXT,
+  XMLData LONGTEXT
+);
+GRANT SELECT ON ddmgr.DataFileUpload TO api@localhost;
+GRANT INSERT ON ddmgr.DataFileUpload TO api@localhost;
+GRANT UPDATE ON ddmgr.DataFileUpload TO api@localhost;

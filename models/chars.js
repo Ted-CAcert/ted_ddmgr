@@ -39,3 +39,22 @@ exports.char = function() {
     return res;
   }
 }
+
+exports.getList = async function(searchSpec, PersonID) {
+    let res;
+
+    if (!PersonID) {
+        throw({Code: 'NOTALLOWED', Msg: "char.getList must be called with PersonID"});
+    }
+
+    let options = { 
+        dataArray: [searchSpec, searchSpec],
+        fieldList: [ "NPCID", "CharName", "DMComment", "CurAC", "CurBAB", "CurRefSave", "CurFortSave", "CurWillSave", "CurHP", "CurMaxHP", "CurMove", "CharUID" ] 
+    }
+    if (!searchSpec) {
+        res = await DB.search(null, 'NPC', options, PersonID)
+    } else {
+        res = await DB.search('CharName LIKE ? OR CharUID LIKE ?', 'NPC', options, PersonID)
+    }
+    return res;
+  }

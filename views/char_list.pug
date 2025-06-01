@@ -1,0 +1,21 @@
+extends layout
+
+block content
+  h1= title
+
+  if charList.length
+    table
+      thead
+        tr
+            td Name 
+            td Comment 
+            td AC 
+      each char in charList
+        tr
+          td
+            a(href="/chars/"+char.CharUID) #{char.CharName}
+          td #{char.DMComment}
+          td #{char.CurAC}
+
+  else
+    p There are no campaigns.

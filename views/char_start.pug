@@ -5,19 +5,21 @@ block content
 
   form(method='POST')
     .form-group
-      button.btn.btn-primary(type='submit') Create
+      button.btn.btn-primary(type='submit' name='create') Create
 
   h3 Search
     form(method='POST')
       .form-group
         input#charname.form-control(type='text', placeholder='Turin Deathstalker' name='charname' )    
-        button.btn.btn-primary(type='submit') Search
+        button.btn.btn-primary(type='submit' name='search') Search
 
   h3 Browse
-  .sortbutton-group 
-    button.btn.btn-primary(type='submit') Sort By Name
-    button.btn.btn-primary(type='submit') Sort By Class
-    button.btn.btn-primary(type='submit') Sort By Level
+    form(method='POST')
+      .form-group
+        .sortbutton-group 
+          button.btn.btn-primary(type='submit' name='sortName') Sort By Name
+          button.btn.btn-primary(type='submit' name='sortClass') Sort By Class
+          button.btn.btn-primary(type='submit' name='sortLevel') Sort By Level
 
   .button-group 
     button.btn.btn-primary(type='submit') Back

@@ -9,7 +9,15 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/', function(req, res, next) {
-  res.render('char_create', {title: 'Create Character'});
+  if (req.body.create==="") {
+    res.render('char_create', {title: 'Create Character'});
+  } else if (req.body.search==="") {
+    controller.getList(req, res, next).then((charList) => {
+      res.render('char_list', {title: 'Select Character', charList: charList });    
+    });
+  } else {
+    res.render('char_start', {title: 'Characters'});
+  }
 });
 
 router.post('/save', function(req, res, next) {

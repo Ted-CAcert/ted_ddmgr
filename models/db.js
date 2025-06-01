@@ -631,3 +631,60 @@ exports.FindEnum = async function(EnumType, EnumName) {
   }
   return res;
 }
+
+exports.search = async function(searchSpec, tableName, options, PersonID) {
+  let conn;
+  let res;
+  let query;
+  let restrictArray = [];
+
+  try {
+    conn = await InitPool.getConnection();
+
+    query = "SELECT ";
+    if (options && options.fieldList) {
+      if (options.fieldList.forEach) {
+        let firstLoop = true;
+        options.fieldList.forEach((elm) => {
+          if (firstLoop) {firstLoop = false; }
+          else {
+            query += ", "
+          }
+          query += elm;
+        });
+        query += " ";
+      } else {
+        query += options.fieldList+" ";
+      }     
+    } else {
+      query += "* ";
+    }
+    query += "FROM "+tableName+" WHERE CreatorID=? ";
+    restrictArray.push(PersonID);
+
+    // Only exact AND search with a field list, for everything else use searchSpec for the restriction string
+    if (!searchSpec) {
+      // Do nothing ==> search all records
+    } else if (searchSpec.keys) {
+      searchSpec.keys.foreach((elm) => {
+        query += 'AND '+elm+'=? ';
+        restrictArray.push(searchSpec[elm]);
+      });
+    } else if (searchSpec) {
+      query += "AND ("+searchSpec+")";
+      if (options.dataArray && Object.prototype.toString.call(options.dataArray) === '[object Array]') {
+        restrictArray.push(options.dataArray);
+      }
+    }
+    console.log('Search query: '+query);
+    res = await conn.query(query, restrictArray);
+  } catch(error) {
+    console.log("error in search");
+    console.log(debugLine(error));
+    throw error;
+   } finally {
+    if (conn) conn.release();
+  }
+
+  return res;
+}
